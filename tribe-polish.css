@@ -1,10 +1,10 @@
-/* Subtle tribe-screen polish: preserve the current composition, improve readability and hierarchy. */
+/* Tribe-screen polish: keep the current visual language, make the two leaders the focus. */
 
-/* Header stays light, but gains enough contrast over the moving jungle. */
+/* Header: readable over the moving jungle without becoming a heavy banner. */
 .tribe-heading {
   width: min(920px, 92%);
-  margin: 0 auto 14px;
-  padding: 8px 18px 11px;
+  margin: 0 auto 12px;
+  padding: 7px 18px 10px;
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(3, 11, 7, .42), rgba(3, 11, 7, .16));
   border: 1px solid rgba(217, 189, 114, .09);
@@ -19,46 +19,53 @@
   text-shadow: 0 2px 14px rgba(0, 0, 0, .92), 0 1px 2px rgba(0, 0, 0, .92);
 }
 
-#tribe-kicker {
-  color: #e0c16d;
-}
-
-#tribe-title {
-  color: #fffaf0;
-}
-
+#tribe-kicker { color: #e0c16d; }
+#tribe-title { color: #fffaf0; }
 #tribe-subtitle {
   color: rgba(244, 248, 240, .92);
   max-width: 780px;
   margin-inline: auto;
 }
 
-/* Keep the original three-column rhythm, only improve panel opacity. */
-.lore-panel {
-  background: linear-gradient(155deg, rgba(5, 18, 11, .94), rgba(3, 12, 8, .89));
-  border-color: rgba(217, 189, 114, .18);
-  box-shadow: 0 20px 58px rgba(0, 0, 0, .34);
-  overflow-x: hidden;
-}
-
-.lore-panel p,
-.lore-panel li {
-  color: rgba(236, 243, 233, .91);
-}
-
-/* Make the right-hand section title readable without turning it into a giant banner. */
+/* The old caption adds no useful information once the two cards are visible. */
 .tribe-layout .section-label {
-  display: block;
-  margin: 0 0 10px;
-  color: #e0c16d;
-  font-size: .78rem;
-  letter-spacing: .22em;
-  text-align: center;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, .95);
+  display: none !important;
 }
 
-/* Chief cards remain exactly where they are, but become more opaque and image-led. */
+/* New hierarchy: chiefs first, tribal knowledge as a compact strip underneath. */
+.tribe-layout {
+  display: flex !important;
+  flex-direction: column;
+  gap: 14px;
+  width: min(1120px, 94vw);
+  max-width: 1120px;
+  height: calc(100% - 104px);
+  margin: 0 auto;
+  padding-bottom: 14px;
+  min-height: 0;
+}
+
+.tribe-layout > div:last-child {
+  order: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.clan-grid {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: min(880px, 100%);
+  margin: 0 auto;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Chief cards: still the same cards, just centred with breathing room beneath them. */
 .clan-card {
+  min-height: 0;
+  height: 100%;
   background: linear-gradient(160deg, rgba(7, 22, 14, .95), rgba(3, 12, 8, .92));
   border-color: rgba(217, 189, 114, .18);
   box-shadow: 0 20px 58px rgba(0, 0, 0, .34);
@@ -66,10 +73,9 @@
   overflow-y: auto;
 }
 
-/* Give the portraits more room instead of moving the whole card. */
 .clan-visual {
-  height: clamp(155px, 23vh, 225px);
-  margin-bottom: 14px;
+  height: clamp(135px, 20vh, 195px);
+  margin-bottom: 12px;
 }
 
 .clan-visual::after {
@@ -87,63 +93,148 @@
 
 .clan-card .clan-values {
   color: #e3d2a1;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-.clan-card p {
-  color: rgba(228, 236, 225, .88);
+.clan-card p { color: rgba(228, 236, 225, .88); }
+.clan-card button { box-shadow: 0 8px 22px rgba(0, 0, 0, .22); }
+
+/* Tribal knowledge becomes a horizontal footer instead of competing with the leaders. */
+.lore-panel {
+  order: 2;
+  flex: 0 0 auto;
+  width: min(1040px, 100%);
+  min-height: 0;
+  max-height: 178px;
+  margin: 0 auto;
+  padding: 15px 20px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto 1fr;
+  column-gap: 24px;
+  row-gap: 7px;
+  background: linear-gradient(155deg, rgba(5, 18, 11, .95), rgba(3, 12, 8, .91));
+  border-color: rgba(217, 189, 114, .18);
+  box-shadow: 0 16px 46px rgba(0, 0, 0, .3);
+  overflow: hidden;
 }
 
-.clan-card button {
-  box-shadow: 0 8px 22px rgba(0, 0, 0, .22);
+.lore-panel .panel-label {
+  grid-column: 1 / -1;
+  margin: 0;
 }
 
-/* Remove the ugly native bars while keeping internal scrolling possible if needed. */
-.lore-panel,
+#tribe-lore {
+  grid-column: 1;
+  min-width: 0;
+  columns: 2;
+  column-gap: 28px;
+}
+
+#tribe-lore p,
+#tribe-lore li {
+  color: rgba(236, 243, 233, .91);
+  font-size: .91rem;
+  line-height: 1.48;
+}
+
+#tribe-lore p {
+  margin: 0 0 8px;
+  break-inside: avoid;
+}
+
+#tribe-global-lore {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: end;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Keep internal scroll possible but unobtrusive. */
 .clan-card,
 .mission-card {
   scrollbar-width: thin;
   scrollbar-color: rgba(217, 189, 114, .28) transparent;
 }
 
-.lore-panel::-webkit-scrollbar,
 .clan-card::-webkit-scrollbar,
 .mission-card::-webkit-scrollbar {
   width: 5px;
   height: 0;
 }
 
-.lore-panel::-webkit-scrollbar-thumb,
 .clan-card::-webkit-scrollbar-thumb,
 .mission-card::-webkit-scrollbar-thumb {
   background: rgba(217, 189, 114, .24);
   border-radius: 999px;
 }
 
-/* On shorter screens, protect the current proportions rather than forcing larger cards. */
-@media (max-height: 760px) and (min-width: 761px) {
+/* Short desktop screens: compress the footer and images before the cards hit the viewport edge. */
+@media (max-height: 800px) and (min-width: 761px) {
   .tribe-heading {
-    padding-block: 5px 7px;
-    margin-bottom: 8px;
+    padding-block: 4px 6px;
+    margin-bottom: 7px;
+  }
+  .tribe-layout {
+    gap: 10px;
+    padding-bottom: 10px;
   }
   .clan-visual {
-    height: clamp(125px, 19vh, 165px);
+    height: clamp(110px, 16vh, 145px);
+  }
+  .clan-card {
+    padding-bottom: 14px;
   }
   .clan-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.38rem;
+  }
+  .clan-card p {
+    line-height: 1.48;
+  }
+  .lore-panel {
+    max-height: 145px;
+    padding: 11px 16px 12px;
+  }
+  #tribe-lore p,
+  #tribe-lore li {
+    font-size: .84rem;
+    line-height: 1.4;
   }
 }
 
+/* Mobile returns to a normal vertical flow. */
 @media (max-width: 760px) {
   .tribe-heading {
     width: calc(100% - 24px);
     padding: 8px 12px 10px;
   }
-  .tribe-layout .section-label {
-    text-align: left;
-    padding-left: 2px;
+  .tribe-layout {
+    width: 100%;
+    height: calc(100% - 92px);
+    overflow: auto;
+    padding-inline: 2px;
+  }
+  .clan-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .clan-card {
+    height: auto;
+    min-height: 430px;
   }
   .clan-visual {
-    height: 125px;
+    height: 145px;
+  }
+  .lore-panel {
+    display: block;
+    max-height: none;
+    width: 100%;
+  }
+  #tribe-lore {
+    columns: 1;
+  }
+  #tribe-global-lore {
+    margin-top: 12px;
   }
 }
