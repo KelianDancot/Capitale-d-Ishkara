@@ -100,8 +100,25 @@
     }
   }
 
+  function loadPointsOfInterest() {
+    if (!document.querySelector('link[href="poi.css"]')) {
+      const stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = 'poi.css';
+      document.head.append(stylesheet);
+    }
+
+    if (!document.querySelector('script[src="poi.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'poi.js';
+      script.defer = true;
+      document.body.append(script);
+    }
+  }
+
   decorateMapPins();
   ensureTribeHistoryButton();
+  loadPointsOfInterest();
 
   const previousShowScreen = showScreen;
   showScreen = function (selector) {
