@@ -187,12 +187,196 @@
   margin-top: 12px;
 }
 
+/* Progression lock: the page itself never scrolls. Large dossiers scroll only inside their card. */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  min-height: 100dvh;
+}
+main {
+  height: calc(100dvh - 92px);
+  overflow: hidden;
+}
+.screen,
+.screen.active {
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+#map-screen {
+  height: 100%;
+}
+.map-stage {
+  height: 100%;
+  min-height: 0;
+}
+
+/* Back navigation remains subtle and does not compete with the content. */
+.flow-back {
+  position: absolute;
+  z-index: 12;
+  top: 8px;
+  left: clamp(16px, 3vw, 46px);
+  padding: 8px 13px;
+  background: rgba(4, 15, 10, .34);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-size: .82rem;
+}
+.tribe-screen,
+.dossier-screen {
+  position: relative;
+  padding-top: 44px;
+}
+
+/* Tribe screen is contained in one viewport. */
+.tribe-heading {
+  margin: 0 auto 14px;
+}
+.tribe-heading h2 {
+  font-size: clamp(1.7rem, 4.5vh, 3.1rem);
+  margin: 4px 0;
+}
+.tribe-heading p:last-child {
+  margin: 0;
+  line-height: 1.42;
+}
+.tribe-layout {
+  height: calc(100% - 108px);
+  min-height: 0;
+  align-items: stretch;
+}
+.tribe-layout > * {
+  min-height: 0;
+}
+.lore-panel {
+  height: 100%;
+  overflow: auto;
+  padding: 20px;
+}
+.tribe-layout > div:last-child {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+}
+.tribe-layout .section-label {
+  margin: 0 0 8px;
+}
+.clan-grid {
+  flex: 1;
+  min-height: 0;
+}
+.clan-card {
+  min-height: 0;
+  height: 100%;
+  overflow: auto;
+  padding: clamp(18px, 2.5vh, 26px);
+}
+
+/* Dossier also stays in the viewport; only the text card may internally scroll. */
+.dossier-shell {
+  height: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  align-items: stretch;
+}
+.leader-card,
+.mission-card {
+  min-height: 0;
+  max-height: 100%;
+}
+.leader-card {
+  position: relative;
+  top: auto;
+  overflow: hidden;
+}
+.mission-card {
+  overflow: auto;
+  padding-block: clamp(20px, 3vh, 34px);
+}
+.leader-sigil {
+  width: clamp(90px, 16vh, 140px);
+  height: clamp(90px, 16vh, 140px);
+  margin-bottom: 14px;
+}
+.leader-card blockquote {
+  margin-top: 16px;
+  padding-top: 14px;
+}
+.mission-card > h2 {
+  font-size: clamp(1.45rem, 3vh, 2.4rem);
+  margin: 6px 0 10px;
+}
+.directive-text {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.secret-note {
+  margin: 14px 0;
+  padding: 14px 16px;
+}
+.build-grid {
+  gap: 12px;
+  margin-top: 14px;
+}
+.build-grid section {
+  padding: 14px 16px;
+}
+.build-grid li {
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.final-note {
+  margin-top: 14px;
+}
+
+/* A validated tribe makes every other tribe physically unavailable. */
+.tribe-pin.is-locked,
+.tribe-pin:disabled {
+  opacity: .12;
+  filter: grayscale(.85) blur(.15px);
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: scale(.94);
+}
+.tribe-pin.is-locked .pin-point,
+.tribe-pin:disabled .pin-point {
+  box-shadow: none;
+  background: rgba(210, 220, 210, .28);
+}
+.tribe-pin.is-chosen {
+  border-color: rgba(217, 189, 114, .42);
+  opacity: .88;
+}
+
+/* Once allegiance is sworn, the abandoned chief cannot be selected anymore. */
+.clan-card.is-locked-clan {
+  opacity: .28;
+  filter: grayscale(.65);
+  pointer-events: none;
+}
+.clan-card.is-locked-clan button {
+  opacity: .55;
+}
+.clan-card.is-chosen-clan {
+  border-color: rgba(217, 189, 114, .48);
+  box-shadow: 0 0 0 1px rgba(217, 189, 114, .08), var(--shadow);
+}
+
 @media (max-width: 760px) {
   .tutorial-grid {
     grid-template-columns: 1fr;
   }
   .topbar {
+    min-height: 72px;
     padding-inline: 16px;
+  }
+  main {
+    height: calc(100dvh - 72px);
   }
   .topbar h1 {
     font-size: 1.05rem;
@@ -215,5 +399,29 @@
   }
   .pin-copy small {
     display: none;
+  }
+  .tribe-layout,
+  .dossier-shell {
+    grid-template-columns: 1fr;
+  }
+  .tribe-layout {
+    height: calc(100% - 92px);
+    overflow: auto;
+  }
+  .clan-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dossier-shell {
+    overflow: auto;
+  }
+  .leader-card {
+    display: none;
+  }
+  .mission-card {
+    max-height: none;
+    overflow: visible;
+  }
+  .flow-back {
+    top: 5px;
   }
 }
