@@ -5,10 +5,10 @@
 }
 
 /* Positions volontairement provisoires : le MJ peut les déplacer librement. */
-.pin-graveyard { left: 63%; top: 68%; }
-.pin-sobek { left: 22%; top: 24%; }
-.pin-couatl { left: 49%; top: 43%; }
-.pin-jungle-village { left: 74%; top: 22%; }
+.pin-graveyard { right: 43%; top: 37%; }
+.pin-sobek { left: 22%; top: 39%; }
+.pin-couatl { right: 20%; top: 35%; }
+.pin-jungle-village { left: 40%; bottom: 25%; }
 
 .poi-media {
   position: relative;
