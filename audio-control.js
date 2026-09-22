@@ -11,7 +11,7 @@
   const iconSound = button.querySelector('[data-icon="sound"]');
   const iconMuted = button.querySelector('[data-icon="muted"]');
 
-  function syncButton() {
+  function syncButton(animate = false) {
     const muted = audio.muted;
     button.classList.toggle('is-muted', muted);
     button.setAttribute('aria-pressed', muted ? 'true' : 'false');
@@ -19,6 +19,13 @@
     button.title = muted ? 'Activer la musique' : 'Couper la musique';
     if (iconSound) iconSound.hidden = muted;
     if (iconMuted) iconMuted.hidden = !muted;
+
+    if (animate) {
+      button.classList.remove('is-switching');
+      void button.offsetWidth;
+      button.classList.add('is-switching');
+      setTimeout(() => button.classList.remove('is-switching'), 420);
+    }
   }
 
   async function startMusic() {
@@ -34,7 +41,7 @@
   button.addEventListener('click', async () => {
     audio.muted = !audio.muted;
     localStorage.setItem(STORAGE_KEY, String(audio.muted));
-    syncButton();
+    syncButton(true);
     if (!audio.muted) await startMusic();
   });
 
@@ -47,5 +54,5 @@
   document.addEventListener('pointerdown', beginOnInteraction, true);
   document.addEventListener('keydown', beginOnInteraction, true);
 
-  syncButton();
+  syncButton(false);
 })();
