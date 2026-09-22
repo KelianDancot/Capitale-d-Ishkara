@@ -1,9 +1,8 @@
-/* Tribe-screen polish: keep the current visual language, make the two leaders the focus. */
+/* Tribe screen: keep the leaders as the sole focus and move tribal lore to the top action bar. */
 
-/* Header: readable over the moving jungle without becoming a heavy banner. */
 .tribe-heading {
   width: min(920px, 92%);
-  margin: 0 auto 12px;
+  margin: 0 auto 14px;
   padding: 7px 18px 10px;
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(3, 11, 7, .42), rgba(3, 11, 7, .16));
@@ -22,70 +21,68 @@
 #tribe-kicker { color: #e0c16d; }
 #tribe-title { color: #fffaf0; }
 #tribe-subtitle {
-  color: rgba(244, 248, 240, .92);
+  color: rgba(244, 248, 240, .94);
   max-width: 780px;
   margin-inline: auto;
 }
 
-/* The old caption adds no useful information once the two cards are visible. */
-.tribe-layout .section-label {
+/* Tribal lore no longer competes with the choices on this screen. */
+.tribe-screen .lore-panel,
+.tribe-screen .section-label {
   display: none !important;
 }
 
-/* New hierarchy: chiefs first, tribal knowledge as a compact strip underneath. */
 .tribe-layout {
-  display: flex !important;
-  flex-direction: column;
-  gap: 14px;
-  width: min(1120px, 94vw);
-  max-width: 1120px;
-  height: calc(100% - 104px);
+  display: block !important;
+  width: min(980px, 92vw);
+  max-width: 980px;
+  height: calc(100% - 112px);
   margin: 0 auto;
-  padding-bottom: 14px;
+  padding: 0 0 30px;
   min-height: 0;
 }
 
 .tribe-layout > div:last-child {
-  order: 1;
-  flex: 1 1 auto;
+  display: block;
+  height: 100%;
   min-height: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 .clan-grid {
-  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+  width: 100%;
+  height: 100%;
   min-height: 0;
-  width: min(880px, 100%);
-  margin: 0 auto;
-  gap: 20px;
   align-items: stretch;
 }
 
-/* Chief cards: still the same cards, just centred with breathing room beneath them. */
 .clan-card {
   min-height: 0;
   height: 100%;
-  background: linear-gradient(160deg, rgba(7, 22, 14, .95), rgba(3, 12, 8, .92));
+  padding-bottom: 22px;
+  background: linear-gradient(160deg, rgba(7, 22, 14, .96), rgba(3, 12, 8, .93));
   border-color: rgba(217, 189, 114, .18);
-  box-shadow: 0 20px 58px rgba(0, 0, 0, .34);
+  box-shadow: 0 22px 62px rgba(0, 0, 0, .36);
   overflow-x: hidden !important;
   overflow-y: auto;
 }
 
+/* Give both portraits the same generous share of the card. */
 .clan-visual {
-  height: clamp(135px, 20vh, 195px);
-  margin-bottom: 12px;
+  height: clamp(190px, 30vh, 300px);
+  margin-bottom: 14px;
 }
 
 .clan-visual::after {
-  inset: 58% 0 0;
-  background: linear-gradient(180deg, transparent, rgba(4, 14, 9, .94));
+  inset: 64% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(4, 14, 9, .95));
 }
 
 .clan-card h3 {
-  font-size: clamp(1.45rem, 2.1vw, 1.9rem);
-  line-height: 1.08;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.06;
   margin: 8px 0 10px;
   color: #fff7e4;
   text-shadow: 0 2px 12px rgba(0, 0, 0, .72);
@@ -96,114 +93,71 @@
   margin-bottom: 12px;
 }
 
-.clan-card p { color: rgba(228, 236, 225, .88); }
+.clan-card p { color: rgba(228, 236, 225, .9); }
 .clan-card button { box-shadow: 0 8px 22px rgba(0, 0, 0, .22); }
 
-/* Tribal knowledge becomes a horizontal footer instead of competing with the leaders. */
-.lore-panel {
-  order: 2;
-  flex: 0 0 auto;
-  width: min(1040px, 100%);
-  min-height: 0;
-  max-height: 178px;
-  margin: 0 auto;
-  padding: 15px 20px 16px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-rows: auto 1fr;
-  column-gap: 24px;
-  row-gap: 7px;
-  background: linear-gradient(155deg, rgba(5, 18, 11, .95), rgba(3, 12, 8, .91));
-  border-color: rgba(217, 189, 114, .18);
-  box-shadow: 0 16px 46px rgba(0, 0, 0, .3);
-  overflow: hidden;
-}
-
-.lore-panel .panel-label {
-  grid-column: 1 / -1;
-  margin: 0;
-}
-
-#tribe-lore {
-  grid-column: 1;
-  min-width: 0;
-  columns: 2;
-  column-gap: 28px;
-}
-
-#tribe-lore p,
-#tribe-lore li {
-  color: rgba(236, 243, 233, .91);
-  font-size: .91rem;
-  line-height: 1.48;
-}
-
-#tribe-lore p {
-  margin: 0 0 8px;
-  break-inside: avoid;
-}
-
-#tribe-global-lore {
-  grid-column: 2;
-  grid-row: 2;
-  align-self: end;
-  margin: 0;
-  white-space: nowrap;
-}
-
-/* Keep internal scroll possible but unobtrusive. */
-.clan-card,
-.mission-card {
+.clan-card {
   scrollbar-width: thin;
-  scrollbar-color: rgba(217, 189, 114, .28) transparent;
+  scrollbar-color: rgba(217, 189, 114, .25) transparent;
 }
-
-.clan-card::-webkit-scrollbar,
-.mission-card::-webkit-scrollbar {
-  width: 5px;
-  height: 0;
-}
-
-.clan-card::-webkit-scrollbar-thumb,
-.mission-card::-webkit-scrollbar-thumb {
+.clan-card::-webkit-scrollbar { width: 5px; height: 0; }
+.clan-card::-webkit-scrollbar-thumb {
   background: rgba(217, 189, 114, .24);
   border-radius: 999px;
 }
 
-/* Short desktop screens: compress the footer and images before the cards hit the viewport edge. */
+/* Contextual tribal-history button next to Synopsis. */
+.tribe-history-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border-color: rgba(217, 189, 114, .34);
+  background: rgba(5, 18, 11, .56);
+  color: #f0dfae;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .14);
+}
+
+.tribe-history-button[hidden] {
+  display: none !important;
+}
+
+.tribe-history-button:hover,
+.tribe-history-button:focus-visible {
+  background: rgba(8, 26, 17, .82);
+  border-color: rgba(217, 189, 114, .72);
+}
+
+.tribe-history-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 0 rgba(217, 189, 114, .34);
+  animation: historyPulse 2.4s ease-out infinite;
+}
+
+@keyframes historyPulse {
+  0% { box-shadow: 0 0 0 0 rgba(217, 189, 114, .36); }
+  68%, 100% { box-shadow: 0 0 0 8px rgba(217, 189, 114, 0); }
+}
+
 @media (max-height: 800px) and (min-width: 761px) {
   .tribe-heading {
     padding-block: 4px 6px;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
   }
   .tribe-layout {
-    gap: 10px;
-    padding-bottom: 10px;
+    height: calc(100% - 98px);
+    padding-bottom: 22px;
   }
   .clan-visual {
-    height: clamp(110px, 16vh, 145px);
+    height: clamp(150px, 23vh, 210px);
   }
-  .clan-card {
-    padding-bottom: 14px;
-  }
-  .clan-card h3 {
-    font-size: 1.38rem;
-  }
-  .clan-card p {
-    line-height: 1.48;
-  }
-  .lore-panel {
-    max-height: 145px;
-    padding: 11px 16px 12px;
-  }
-  #tribe-lore p,
-  #tribe-lore li {
-    font-size: .84rem;
-    line-height: 1.4;
-  }
+  .clan-card h3 { font-size: 1.45rem; }
+  .clan-card p { line-height: 1.48; }
 }
 
-/* Mobile returns to a normal vertical flow. */
 @media (max-width: 760px) {
   .tribe-heading {
     width: calc(100% - 24px);
@@ -213,28 +167,26 @@
     width: 100%;
     height: calc(100% - 92px);
     overflow: auto;
-    padding-inline: 2px;
+    padding: 0 2px 24px;
   }
   .clan-grid {
-    width: 100%;
     grid-template-columns: 1fr;
+    height: auto;
   }
   .clan-card {
     height: auto;
-    min-height: 430px;
+    min-height: 500px;
   }
   .clan-visual {
-    height: 145px;
+    height: 220px;
   }
-  .lore-panel {
-    display: block;
-    max-height: none;
-    width: 100%;
+  .tribe-history-button {
+    padding-inline: 12px;
   }
-  #tribe-lore {
-    columns: 1;
-  }
-  #tribe-global-lore {
-    margin-top: 12px;
+  .tribe-history-label {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
