@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08150f">
+  <meta name="description" content="Portail d'introduction au one-shot Les Héritiers d'Ishkara.">
+  <title>Les Héritiers d’Ishkara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+
+  <video id="world-video" class="world-video" autoplay muted loop playsinline poster="Ishkara.png">
+    <source src="fond Ishkara.webm" type="video/webm">
+  </video>
+  <video id="jungle-video" class="world-video jungle-video" muted loop playsinline poster="Ishkara.png">
+    <source src="fond-jungle.mp4" type="video/mp4">
+  </video>
+  <div class="world-shade" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Elyden · Ishkara</p>
+      <h1>Les Héritiers d’Ishkara</h1>
+    </div>
+    <div class="top-actions">
+      <button class="ghost-button" id="lore-button" type="button">Chroniques connues</button>
+      <button class="lock-button" id="reset-button" type="button" aria-label="Accès du maître du jeu">✦</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="map-screen" class="screen active" aria-labelledby="map-title">
+      <div class="map-intro glass-card">
+        <p class="eyebrow">Aux frontières de la brume</p>
+        <h2 id="map-title">Choisis le peuple dont tu portes la voix</h2>
+        <p>Trois communautés veillent sur Ishkara. Approche un marqueur pour découvrir ce qu’un voyageur peut savoir avant de s’engager davantage.</p>
+      </div>
+
+      <div class="map-stage" aria-label="Carte interactive d’Ishkara">
+        <button class="tribe-pin pin-iiskraal" data-tribe="iiskraal" type="button">
+          <span class="portrait-stack" aria-hidden="true"><i>PC</i><i>SO</i></span>
+          <span class="pin-copy"><b>Iiskraal</b><small>Discipline · puissance · stratégie</small></span>
+          <span class="pin-point"></span>
+        </button>
+
+        <button class="tribe-pin pin-roncepignon" data-tribe="roncepignon" type="button">
+          <span class="portrait-stack" aria-hidden="true"><i>DR</i><i>AD</i></span>
+          <span class="pin-copy"><b>Roncepignon</b><small>Spores · entraide · défense</small></span>
+          <span class="pin-point"></span>
+        </button>
+
+        <button class="tribe-pin pin-croafond" data-tribe="croafond" type="button">
+          <span class="portrait-stack" aria-hidden="true"><i>CD</i><i>GM</i></span>
+          <span class="pin-copy"><b>Croafond</b><small>Marais · équilibre · ferveur</small></span>
+          <span class="pin-point"></span>
+        </button>
+
+        <button class="lore-pin pin-casino" data-lore="casino" type="button" aria-label="Le Casino Échoué"><span>✦</span></button>
+        <button class="lore-pin pin-brume" data-lore="brume" type="button" aria-label="Le front de brume"><span>◌</span></button>
+        <button class="lore-pin pin-rivieres" data-lore="rivieres" type="button" aria-label="Les voies d’eau"><span>≈</span></button>
+      </div>
+
+      <p class="map-hint">Les marqueurs secondaires révèlent uniquement ce que les habitants d’Ishkara connaissent déjà.</p>
+    </section>
+
+    <section id="tribe-screen" class="screen tribe-screen" aria-live="polite">
+      <div class="tribe-heading">
+        <p class="eyebrow" id="tribe-kicker">Mémoire tribale</p>
+        <h2 id="tribe-title">Ishkara</h2>
+        <p id="tribe-subtitle"></p>
+      </div>
+      <div class="tribe-layout">
+        <article class="glass-card lore-panel">
+          <span class="panel-label">Ce que ton peuple sait</span>
+          <div id="tribe-lore"></div>
+          <button class="text-button" id="tribe-global-lore" type="button">Consulter le contexte d’Ishkara</button>
+        </article>
+        <div>
+          <p class="section-label">Deux voix peuvent te revendiquer</p>
+          <div id="clan-grid" class="clan-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dossier-screen" class="screen dossier-screen" aria-live="polite">
+      <div class="dossier-shell">
+        <aside class="leader-card glass-card">
+          <div class="leader-sigil" id="leader-sigil">?</div>
+          <p class="eyebrow">Ton commanditaire</p>
+          <h2 id="leader-name"></h2>
+          <p id="leader-role" class="leader-role"></p>
+          <blockquote id="leader-quote"></blockquote>
+        </aside>
+        <article class="mission-card glass-card">
+          <span class="panel-label">Directive personnelle</span>
+          <h2 id="directive-title"></h2>
+          <p id="directive-text" class="directive-text"></p>
+          <div class="secret-note">
+            <b>Ce que tu gardes pour toi</b>
+            <p id="private-info"></p>
+          </div>
+          <div class="build-grid">
+            <section>
+              <h3>Cadre du personnage</h3>
+              <ul id="build-rules"></ul>
+            </section>
+            <section>
+              <h3>Pistes recommandées</h3>
+              <ul id="build-recos"></ul>
+            </section>
+          </div>
+          <p class="final-note">Tu peux interpréter librement ces recommandations. La directive définit une intention, pas une suite d’actions obligatoires.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="info-dialog" class="modal">
+    <button class="modal-close" data-close type="button" aria-label="Fermer">×</button>
+    <p class="eyebrow" id="info-kicker">Ishkara</p>
+    <h2 id="info-title"></h2>
+    <div id="info-body" class="modal-body"></div>
+    <div id="info-actions" class="modal-actions"></div>
+  </dialog>
+
+  <dialog id="code-dialog" class="modal code-modal">
+    <button class="modal-close" data-close type="button" aria-label="Fermer">×</button>
+    <p class="eyebrow">Le mot transmis par ton peuple</p>
+    <h2>Prononce le mot de passage</h2>
+    <p>Ce mot t’a été confié hors-jeu. Il ouvre uniquement les souvenirs liés à ton peuple.</p>
+    <form id="code-form">
+      <label for="tribe-code">Mot de passage</label>
+      <input id="tribe-code" name="code" autocomplete="off" spellcheck="false" required>
+      <p id="code-error" class="form-error" role="alert"></p>
+      <button class="primary-button" type="submit">S’immerger</button>
+    </form>
+  </dialog>
+
+  <dialog id="confirm-dialog" class="modal confirm-modal">
+    <p class="eyebrow">Un choix qui engage</p>
+    <h2 id="confirm-title">Jurer fidélité ?</h2>
+    <p id="confirm-copy"></p>
+    <div class="modal-actions two-actions">
+      <button class="ghost-button" id="cancel-choice" type="button">Pas encore</button>
+      <button class="danger-button" id="confirm-choice" type="button">Je choisis cette voie</button>
+    </div>
+  </dialog>
+
+  <dialog id="reset-dialog" class="modal code-modal">
+    <button class="modal-close" data-close type="button" aria-label="Fermer">×</button>
+    <p class="eyebrow">Accès du maître du jeu</p>
+    <h2>Briser le serment enregistré</h2>
+    <form id="reset-form">
+      <label for="reset-code">Code MJ</label>
+      <input id="reset-code" autocomplete="off" spellcheck="false" required>
+      <p id="reset-error" class="form-error" role="alert"></p>
+      <button class="danger-button" type="submit">Réinitialiser cet appareil</button>
+    </form>
+  </dialog>
+
+  <div id="transition" class="transition" aria-hidden="true">
+    <div class="transition-rune">✦</div>
+    <p>La jungle se rapproche…</p>
+  </div>
+
+  <audio id="unlock-sound" preload="auto"></audio>
+  <script src="app.js" defer></script>
+</body>
+</html>
