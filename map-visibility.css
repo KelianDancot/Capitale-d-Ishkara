@@ -1,0 +1,149 @@
+/* Home-map visibility control: lets players fade UI to admire the animated map. */
+.map-visibility-control {
+  --map-ui-level: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 10px 0 9px;
+  border: 1px solid rgba(217, 189, 114, .22);
+  border-radius: 999px;
+  background: rgba(4, 15, 10, .52);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .14);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  transition: opacity .2s ease, transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.map-visibility-control[hidden] {
+  display: none !important;
+}
+
+.map-visibility-control:hover,
+.map-visibility-control:focus-within {
+  border-color: rgba(217, 189, 114, .5);
+  background: rgba(7, 23, 15, .72);
+}
+
+.map-visibility-toggle {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #ead79f;
+  cursor: pointer;
+  transition: transform .2s ease, color .2s ease, background .2s ease;
+}
+
+.map-visibility-toggle:hover,
+.map-visibility-toggle:focus-visible {
+  transform: scale(1.08);
+  color: #fff0bd;
+  background: rgba(217, 189, 114, .08);
+  outline: none;
+}
+
+.map-visibility-toggle svg {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: opacity .18s ease, transform .24s ease;
+}
+
+.map-visibility-toggle [data-eye="hidden"] {
+  opacity: 0;
+  transform: scale(.72) rotate(-8deg);
+}
+
+.map-visibility-control.is-hidden .map-visibility-toggle [data-eye="visible"] {
+  opacity: 0;
+  transform: scale(.72) rotate(8deg);
+}
+
+.map-visibility-control.is-hidden .map-visibility-toggle [data-eye="hidden"] {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+.map-visibility-slider {
+  width: 92px;
+  height: 18px;
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.map-visibility-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    rgba(217,189,114,.32),
+    rgba(217,189,114,.8));
+}
+
+.map-visibility-slider::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(255, 244, 207, .9);
+  border-radius: 50%;
+  background: #d9bd72;
+  box-shadow: 0 0 0 3px rgba(217,189,114,.12), 0 3px 8px rgba(0,0,0,.35);
+}
+
+.map-visibility-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(217,189,114,.62);
+}
+
+.map-visibility-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(255, 244, 207, .9);
+  border-radius: 50%;
+  background: #d9bd72;
+  box-shadow: 0 0 0 3px rgba(217,189,114,.12), 0 3px 8px rgba(0,0,0,.35);
+}
+
+/* Only the home-map interface fades. The animated map/video stays untouched. */
+#map-screen .map-intro,
+#map-screen .map-hint,
+#map-screen .tribe-pin,
+#map-screen .lore-pin {
+  opacity: var(--map-overlay-opacity, 1);
+  transition: opacity .24s ease, filter .24s ease, transform .24s ease;
+}
+
+#map-screen.map-ui-nearly-hidden .map-intro,
+#map-screen.map-ui-nearly-hidden .map-hint,
+#map-screen.map-ui-nearly-hidden .tribe-pin,
+#map-screen.map-ui-nearly-hidden .lore-pin {
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .map-visibility-control {
+    height: 36px;
+    padding-inline: 7px;
+    gap: 5px;
+  }
+
+  .map-visibility-slider {
+    width: 66px;
+  }
+}
