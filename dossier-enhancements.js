@@ -1,107 +1,80 @@
 (() => {
-  const classIcons = {
-    'Artificier': 'img/img-classe/Artificier.png',
-    'Barbare': 'img/img-classe/Barbare.png',
-    'Barde': 'img/img-classe/Barde.png',
-    'Clerc': 'img/img-classe/clerc.png',
-    'Druide': 'img/img-classe/Druide.png',
-    'Ensorceleur': 'img/img-classe/ensorceleur.png',
-    'Guerrier': 'img/img-classe/Guerrier.png',
-    'Magicien': 'img/img-classe/Magicien.png',
-    'Moine': 'img/img-classe/Moine.png',
-    'Occultiste': 'img/img-classe/Occultiste.png',
-    'Paladin': 'img/img-classe/Paladin.png',
-    'Roublard': 'img/img-classe/Roublard.png',
-    'Rôdeur': 'img/img-classe/Rôdeur.png'
-  };
+  const bullywugAideDD = `Si tu crées ton personnage sur <strong>AideDD</strong>, utilise <strong>Triton</strong> comme race de départ puis remplace ses traits raciaux sur la fiche par ceux du Bullywug indiqués sur <a href="https://www.dandwiki.com/wiki/Bullywug_(5e_Race)" target="_blank" rel="noopener noreferrer">cette référence</a>. Pour les caractéristiques, <strong>n’utilise pas les bonus fixes de cette page</strong> : choisis soit <strong>+2/+1</strong>, soit <strong>+1/+1/+1</strong>.`;
 
-  const recommendedClasses = {
-    iiskraal: {
-      strategist: ['Roublard', 'Magicien', 'Artificier', 'Rôdeur', 'Guerrier'],
-      champion: ['Paladin', 'Guerrier', 'Barbare', 'Clerc', 'Rôdeur']
-    },
-    roncepignon: {
-      druid: ['Druide', 'Barde', 'Clerc', 'Rôdeur', 'Moine'],
-      artisans: ['Roublard', 'Rôdeur', 'Artificier', 'Guerrier', 'Magicien']
-    },
-    croafond: {
-      sleeper: ['Rôdeur', 'Druide', 'Moine', 'Guerrier', 'Clerc'],
-      priest: ['Clerc', 'Occultiste', 'Paladin', 'Roublard', 'Druide']
-    }
-  };
-
-  const bullywugGuide = `
-    <strong>Création Bullywug sur AideDD :</strong>
-    choisis <strong>Triton</strong> comme base, puis remplace ses traits raciaux sur la fiche par ceux du Bullywug.
-    Garde une répartition de caractéristiques moderne : <strong>+2/+1</strong> ou <strong>+1/+1/+1</strong> au choix, et ignore le +2 Constitution / +1 Sagesse proposé par la page de référence.
-    <span class="bullywug-traits">Traits à reporter : taille M ; vitesse 20 ft et nage 40 ft ; respiration air/eau ; communication d'idées simples avec les amphibiens ; avantage en Discrétion dans les terrains marécageux ; saut en longueur 20 ft et en hauteur 10 ft sans élan ; morsure 1d4 + Force ; langues Commun et Bullywug.</span>
-    <a href="https://www.dandwiki.com/wiki/Bullywug_(5e_Race)" target="_blank" rel="noopener noreferrer">Voir la référence Bullywug</a>.`;
-
-  function ensureBullywugGuidance() {
-    ['sleeper', 'priest'].forEach(clanKey => {
-      const rules = tribes?.croafond?.clans?.[clanKey]?.rules;
-      if (!rules || rules.some(rule => String(rule).includes('Création Bullywug sur AideDD'))) return;
-      rules.push(bullywugGuide);
-    });
+  function setRules(tribeKey, clanKey, rules, recos) {
+    const clan = tribes?.[tribeKey]?.clans?.[clanKey];
+    if (!clan) return;
+    clan.rules = rules;
+    clan.recos = recos;
   }
 
-  function decorateBullywugGuidance(tribeKey) {
-    if (tribeKey !== 'croafond') return;
-    const list = document.getElementById('build-rules');
-    if (!list) return;
+  setRules('iiskraal', 'strategist', [
+    'Niveau 7.',
+    '<strong>Race prédéfinie : Homme-lézard / Lizardfolk.</strong> Ton champion est un membre d’Iiskraal ; la race n’est pas laissée au choix.',
+    'Ton personnage doit être assez compétent pour être présenté comme champion ou spécialiste d’Iiskraal.',
+    'Prévois une raison personnelle de croire à l’ordre, à la préparation ou à la supériorité d’une stratégie bien construite.'
+  ], [
+    '<strong>Classe : libre.</strong> Choisis celle qui correspond le mieux à ta manière d’incarner un champion méthodique, rusé ou tactique.',
+    '<strong>Historique : libre.</strong> Fais surtout en sorte qu’il explique ta place et ton utilité à Iiskraal.',
+    'Les compétences d’analyse, de perception, d’influence ou de discrétion sont naturellement utiles à cette voie, sans être obligatoires.'
+  ]);
 
-    let item = [...list.querySelectorAll('li')].find(li => li.textContent.includes('Création Bullywug sur AideDD'));
-    if (!item) {
-      item = document.createElement('li');
-      item.innerHTML = bullywugGuide;
-      list.append(item);
-    }
-    item.classList.add('bullywug-guide');
-  }
+  setRules('iiskraal', 'champion', [
+    'Niveau 7.',
+    '<strong>Race prédéfinie : Homme-lézard / Lizardfolk.</strong> Ton champion est un membre d’Iiskraal ; la race n’est pas laissée au choix.',
+    'Ton personnage doit pouvoir être reconnu comme protecteur, combattant ou représentant de valeur.',
+    'Définis une limite morale claire que ton personnage ne franchira pas.'
+  ], [
+    '<strong>Classe : libre.</strong> Elle doit simplement permettre d’incarner la force, la protection ou le mérite selon ta propre lecture.',
+    '<strong>Historique : libre.</strong> Relie-le à ton statut dans Iiskraal et à la confiance que le Champion de Sobek place en toi.',
+    'Un code personnel clair compte davantage que l’optimisation de la classe.'
+  ]);
 
-  function decorateClassRecommendations(tribeKey, clanKey) {
-    const recosSection = document.querySelector('.build-grid section:nth-child(2)');
-    if (!recosSection) return;
+  setRules('roncepignon', 'druid', [
+    'Niveau 7.',
+    '<strong>Race prédéfinie : Halfelin ou Gnome, n’importe quelle sous-race.</strong>',
+    'Quelle que soit ta sous-race, ton apparence doit montrer ton appartenance à la voie du Grand Druide : spores, champignons, fibres végétales, talismans naturels, vêtements organiques ou autres éléments visuels liés au vivant de Roncepignon.',
+    'Ta personnalité et ta directive doivent rester dans les clous de cette voie : préserver les liens, éviter l’escalade et privilégier les solutions qui permettent aux autres de rester capables de dialoguer.',
+    'Ton personnage doit avoir une raison crédible d’être choisi comme médiateur, guide ou protecteur.'
+  ], [
+    '<strong>Classe : libre.</strong> Aucune classe n’est imposée : construis le champion qui traduit le mieux ton rapport au vivant et à l’harmonie.',
+    '<strong>Historique : libre.</strong> Il doit seulement expliquer comment tu es devenu assez important ou fiable pour être envoyé au nom de cette faction.',
+    'Le concept compte davantage que la mécanique : un personnage social, mystique, martial ou technique peut fonctionner s’il respecte la philosophie du Grand Druide.'
+  ]);
 
-    recosSection.querySelector('.class-icon-strip')?.remove();
-    const classes = recommendedClasses[tribeKey]?.[clanKey] || [];
-    if (!classes.length) return;
+  setRules('roncepignon', 'artisans', [
+    'Niveau 7.',
+    '<strong>Race prédéfinie : Halfelin ou Gnome, n’importe quelle sous-race.</strong>',
+    'Quelle que soit ta sous-race, ton apparence doit rappeler les Veilleurs des Profondeurs : équipement utilitaire, outils de sapeur, accessoires de pièges, vêtements sombres ou renforcés, marques des galeries, protections adaptées au travail souterrain.',
+    'Ta personnalité et ta directive doivent rester dans les clous du choix de Morkehl : préparation, contrôle, prudence, capacité à paraître coopératif et priorité absolue donnée à la survie de Roncepignon.',
+    'Ton personnage doit avoir un lien crédible avec les défenses du village : sentinelle, éclaireur, sapeur, poseur de pièges, spécialiste des galeries ou rôle équivalent.'
+  ], [
+    '<strong>Classe : libre.</strong> Aucune classe n’est imposée : choisis ce qui sert le mieux ton idée de spécialiste préparé et dangereux lorsqu’il contrôle le terrain.',
+    '<strong>Historique : libre.</strong> Relie-le simplement aux défenses, aux galeries ou à la confiance personnelle de Morkehl.',
+    'Ton personnage doit pouvoir coopérer sincèrement assez longtemps pour que ses intentions profondes ne soient pas évidentes dès le départ.'
+  ]);
 
-    const strip = document.createElement('div');
-    strip.className = 'class-icon-strip';
-    strip.setAttribute('aria-label', 'Classes recommandées');
-    strip.innerHTML = classes.map(className => {
-      const src = classIcons[className];
-      if (!src) return '';
-      return `
-        <div class="class-icon-chip" title="${className}">
-          <img src="${encodeURI(src)}" alt="Icône ${className}">
-          <span>${className}</span>
-        </div>`;
-    }).join('');
+  setRules('croafond', 'sleeper', [
+    'Niveau 7.',
+    '<strong>Race prédéfinie : Bullywug / Brutacien de Croafond.</strong> La race n’est pas laissée au choix.',
+    bullywugAideDD,
+    'Ton personnage doit être à l’aise dans les marais et capable de protéger, d’observer ou d’agir avec patience.',
+    'Donne-lui une raison personnelle de craindre une guerre ouverte entre les villages.'
+  ], [
+    '<strong>Classe : libre.</strong> Choisis celle qui correspond le mieux à ta vision d’un champion prudent, protecteur ou mobile.',
+    '<strong>Historique : libre.</strong> Il doit seulement justifier ton importance aux yeux du Crapaud Dormant et ton expérience des marais.',
+    'Ta manière d’agir doit rester cohérente avec l’équilibre, l’observation et la survie plutôt qu’avec la recherche de gloire.'
+  ]);
 
-    const heading = recosSection.querySelector('h3');
-    if (heading) heading.insertAdjacentElement('afterend', strip);
-    else recosSection.prepend(strip);
-  }
-
-  function decorateDossierExtras(tribeKey, clanKey) {
-    decorateClassRecommendations(tribeKey, clanKey);
-    decorateBullywugGuidance(tribeKey);
-  }
-
-  ensureBullywugGuidance();
-
-  const previousRenderDossier = renderDossier;
-  renderDossier = function (tribeKey, clanKey) {
-    previousRenderDossier(tribeKey, clanKey);
-    requestAnimationFrame(() => decorateDossierExtras(tribeKey, clanKey));
-  };
-
-  try {
-    const progress = JSON.parse(localStorage.getItem('ishkara_progress'));
-    if (progress?.tribe && progress?.clan && tribes[progress.tribe]?.clans?.[progress.clan]) {
-      requestAnimationFrame(() => decorateDossierExtras(progress.tribe, progress.clan));
-    }
-  } catch (_) {}
+  setRules('croafond', 'priest', [
+    'Niveau 7.',
+    '<strong>Race prédéfinie : Bullywug / Brutacien de Croafond.</strong> La race n’est pas laissée au choix.',
+    bullywugAideDD,
+    'Ton personnage doit avoir une relation forte à Glog-Mor, qu’elle soit sincère, intéressée ou obsessionnelle.',
+    'Ton concept doit pouvoir cacher ses intentions et agir avec patience au lieu de provoquer tout le monde immédiatement.'
+  ], [
+    '<strong>Classe : libre.</strong> La mécanique est ton choix ; ce qui compte est de pouvoir porter la ferveur, l’ambition ou l’influence de cette voie.',
+    '<strong>Historique : libre.</strong> Donne-lui simplement une raison crédible d’être proche du culte ou choisi par son prêtre.',
+    'Le personnage peut être mystique, martial, social ou rusé tant que sa manière d’agir reste cohérente avec sa directive.'
+  ]);
 })();
