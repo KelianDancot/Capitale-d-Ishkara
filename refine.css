@@ -1,0 +1,219 @@
+/* Visual refinement layer: keep the animated map readable and the UI minimal. */
+
+/* The map itself should be the hero. */
+.world-shade {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 38%, rgba(0, 0, 0, .12) 72%, rgba(0, 0, 0, .3) 100%);
+}
+.ambient {
+  box-shadow: inset 0 0 100px rgba(1, 8, 4, .28);
+}
+
+/* Strip the landing screen down to pins + map. */
+#map-screen {
+  padding-top: 0;
+}
+#map-screen .map-intro,
+#map-screen .map-hint {
+  display: none;
+}
+.map-stage {
+  min-height: calc(100vh - 96px);
+  width: 100%;
+  max-width: none;
+}
+
+/* Keep the title quiet so the map remains readable. */
+.topbar {
+  background: linear-gradient(180deg, rgba(4, 12, 8, .34), transparent);
+  pointer-events: none;
+}
+.topbar > *,
+.top-actions,
+.top-actions button {
+  pointer-events: auto;
+}
+.topbar h1 {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .75);
+}
+.topbar .eyebrow {
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .9);
+}
+
+/* MJ access should practically disappear unless sought intentionally. */
+#reset-button {
+  opacity: .035;
+  transform: scale(.82);
+  transition: opacity .22s ease, transform .22s ease, border-color .22s ease;
+}
+#reset-button:hover,
+#reset-button:focus-visible {
+  opacity: .9;
+  transform: scale(1);
+  border-color: rgba(217, 189, 114, .55);
+}
+
+/* Tribe markers become translucent floating labels over the video. */
+.tribe-pin {
+  background: linear-gradient(135deg, rgba(4, 15, 9, .30), rgba(4, 15, 9, .12));
+  border-color: rgba(235, 220, 175, .14);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .18);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  opacity: .72;
+  transform-origin: 50% 90%;
+  transition: transform .25s ease, opacity .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+.tribe-pin:hover,
+.tribe-pin:focus-visible {
+  opacity: 1;
+  transform: translateY(-5px) scale(1.055);
+  border-color: rgba(229, 204, 135, .72);
+  background: linear-gradient(135deg, rgba(7, 22, 14, .72), rgba(5, 16, 10, .50));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .38), 0 0 28px rgba(217, 189, 114, .08);
+}
+.portrait-stack i {
+  background: rgba(15, 31, 20, .72);
+  backdrop-filter: blur(4px);
+}
+.pin-copy small {
+  opacity: .72;
+  transition: opacity .2s ease;
+}
+.tribe-pin:hover .pin-copy small,
+.tribe-pin:focus-visible .pin-copy small {
+  opacity: 1;
+}
+.pin-point {
+  width: 13px;
+  height: 13px;
+  box-shadow: 0 0 0 6px rgba(217,189,114,.10), 0 0 22px rgba(217,189,114,.46);
+}
+
+/* Secondary lore pins stay tiny until the player investigates them. */
+.lore-pin {
+  width: 34px;
+  height: 34px;
+  opacity: .38;
+  background: rgba(3, 12, 8, .24);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.02);
+  transform-origin: center;
+}
+.lore-pin:hover,
+.lore-pin:focus-visible {
+  opacity: 1;
+  transform: scale(1.22);
+  background: rgba(4, 16, 10, .72);
+  outline: none;
+}
+
+/* First-arrival tutorial. */
+.welcome-tutorial {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 48%, rgba(4, 14, 9, .44), rgba(1, 6, 4, .84));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: opacity .55s ease, visibility .55s ease, backdrop-filter .55s ease;
+}
+.welcome-tutorial.dismissed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+}
+.welcome-card {
+  width: min(900px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: clamp(26px, 4vw, 48px);
+  border: 1px solid rgba(217, 189, 114, .28);
+  border-radius: 22px;
+  background: linear-gradient(155deg, rgba(7, 22, 14, .93), rgba(4, 13, 8, .88));
+  box-shadow: 0 40px 130px rgba(0, 0, 0, .62);
+}
+.welcome-card h1 {
+  margin: 8px 0 10px;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(2rem, 6vw, 4.2rem);
+}
+.welcome-lead {
+  max-width: 720px;
+  color: #d7dfd2;
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+.tutorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 28px 0 18px;
+}
+.tutorial-grid > div {
+  padding: 17px 18px;
+  border: 1px solid rgba(235, 225, 197, .10);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .025);
+}
+.tutorial-grid span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-family: Cinzel, serif;
+  font-size: .78rem;
+  letter-spacing: .12em;
+}
+.tutorial-grid b {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.02rem;
+}
+.tutorial-grid p {
+  color: #aebcad;
+  line-height: 1.5;
+  margin: 8px 0 0;
+  font-size: .88rem;
+}
+.welcome-note {
+  color: #899b88;
+  font-size: .86rem;
+}
+.welcome-enter {
+  margin-top: 12px;
+}
+
+@media (max-width: 760px) {
+  .tutorial-grid {
+    grid-template-columns: 1fr;
+  }
+  .topbar {
+    padding-inline: 16px;
+  }
+  .topbar h1 {
+    font-size: 1.05rem;
+  }
+  .topbar .eyebrow {
+    display: none;
+  }
+  .tribe-pin {
+    min-width: 0;
+    width: 190px;
+    padding: 9px 10px;
+  }
+  .portrait-stack {
+    min-width: 52px;
+  }
+  .portrait-stack i {
+    width: 34px;
+    height: 34px;
+    font-size: .62rem;
+  }
+  .pin-copy small {
+    display: none;
+  }
+}
