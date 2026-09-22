@@ -17,19 +17,6 @@ Le dossier final contient uniquement :
 
 Le site ne dévoile pas le temple, le Cœur d’Ishkara ni les objectifs exacts de l’épreuve future.
 
-## Codes actuels
-
-> À conserver côté MJ. Les chaînes ne sont pas présentes en clair dans `app.js` : seul leur hash SHA-256 y est stocké. Cela limite les découvertes accidentelles, mais ne remplace pas une authentification serveur.
-
-| Accès | Mot de passage |
-|---|---|
-| Iiskraal | `sobek-garde` |
-| Roncepignon | `spore-lucide` |
-| Croafond | `maree-basse` |
-| Réinitialisation MJ | `racine-premiere` |
-
-Les codes sont normalisés en minuscules, sans accents, et les espaces extérieurs sont ignorés.
-
 ## Déploiement GitHub Pages
 
 Le projet n’a aucun build : `index.html`, `styles.css` et `app.js` sont directement publiables.
@@ -59,9 +46,17 @@ Aucun framework n’est requis.
 
 `Sylaëth.png` reste disponible pour une future section consacrée aux puissances voisines.
 
+## Musique
+
+La musique d’ambiance utilisée est **Theme of Agrual** par **Matthew Pablo**, distribuée sous licence **CC BY 3.0** via OpenGameArt.
+
+Source : https://opengameart.org/content/theme-of-agrual
+
+Le lecteur démarre au premier geste utilisateur afin de respecter les restrictions d’autoplay des navigateurs. Le bouton audio dans l’en-tête permet de couper/réactiver la musique et mémorise ce choix dans le `localStorage`.
+
 ## Portraits des chefs
 
-Le dépôt ne contient pas encore de portraits individuels des chefs. La version actuelle utilise donc des médaillons textuels (`PC`, `SO`, `DR`, `AD`, `CD`, `GM`). Ils ont été conçus comme des placeholders faciles à remplacer par des images plus tard.
+Les portraits et silhouettes de personnages sont chargés depuis le dossier `img/` et utilisés sur la carte, les cartes de choix et les dossiers de personnage.
 
 ## Modifier la position des marqueurs
 

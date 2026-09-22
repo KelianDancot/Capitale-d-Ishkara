@@ -1,0 +1,33 @@
+.build-grid li strong {
+  color: #f1d58b;
+}
+
+.build-grid li a {
+  color: #e1c375;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(225, 195, 117, .35);
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.build-grid li a:hover,
+.build-grid li a:focus-visible {
+  color: #ffe3a0;
+  border-bottom-color: currentColor;
+  outline: none;
+}
+
+.build-grid li:has(a[href*="dandwiki.com"]) {
+  margin-top: 10px;
+  padding: 12px 13px;
+  border: 1px solid rgba(217, 189, 114, .20);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(217, 189, 114, .075), rgba(255,255,255,.018));
+  list-style: none;
+  color: #e7eadf;
+}
+
+.build-grid li:has(a[href*="dandwiki.com"])::before {
+  content: '🐸';
+  margin-right: 7px;
+}
