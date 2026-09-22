@@ -1,0 +1,149 @@
+/* Subtle tribe-screen polish: preserve the current composition, improve readability and hierarchy. */
+
+/* Header stays light, but gains enough contrast over the moving jungle. */
+.tribe-heading {
+  width: min(920px, 92%);
+  margin: 0 auto 14px;
+  padding: 8px 18px 11px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(3, 11, 7, .42), rgba(3, 11, 7, .16));
+  border: 1px solid rgba(217, 189, 114, .09);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .16);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+#tribe-kicker,
+#tribe-title,
+#tribe-subtitle {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .92), 0 1px 2px rgba(0, 0, 0, .92);
+}
+
+#tribe-kicker {
+  color: #e0c16d;
+}
+
+#tribe-title {
+  color: #fffaf0;
+}
+
+#tribe-subtitle {
+  color: rgba(244, 248, 240, .92);
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+/* Keep the original three-column rhythm, only improve panel opacity. */
+.lore-panel {
+  background: linear-gradient(155deg, rgba(5, 18, 11, .94), rgba(3, 12, 8, .89));
+  border-color: rgba(217, 189, 114, .18);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, .34);
+  overflow-x: hidden;
+}
+
+.lore-panel p,
+.lore-panel li {
+  color: rgba(236, 243, 233, .91);
+}
+
+/* Make the right-hand section title readable without turning it into a giant banner. */
+.tribe-layout .section-label {
+  display: block;
+  margin: 0 0 10px;
+  color: #e0c16d;
+  font-size: .78rem;
+  letter-spacing: .22em;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .95);
+}
+
+/* Chief cards remain exactly where they are, but become more opaque and image-led. */
+.clan-card {
+  background: linear-gradient(160deg, rgba(7, 22, 14, .95), rgba(3, 12, 8, .92));
+  border-color: rgba(217, 189, 114, .18);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, .34);
+  overflow-x: hidden !important;
+  overflow-y: auto;
+}
+
+/* Give the portraits more room instead of moving the whole card. */
+.clan-visual {
+  height: clamp(155px, 23vh, 225px);
+  margin-bottom: 14px;
+}
+
+.clan-visual::after {
+  inset: 58% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(4, 14, 9, .94));
+}
+
+.clan-card h3 {
+  font-size: clamp(1.45rem, 2.1vw, 1.9rem);
+  line-height: 1.08;
+  margin: 8px 0 10px;
+  color: #fff7e4;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .72);
+}
+
+.clan-card .clan-values {
+  color: #e3d2a1;
+  margin-bottom: 14px;
+}
+
+.clan-card p {
+  color: rgba(228, 236, 225, .88);
+}
+
+.clan-card button {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .22);
+}
+
+/* Remove the ugly native bars while keeping internal scrolling possible if needed. */
+.lore-panel,
+.clan-card,
+.mission-card {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 189, 114, .28) transparent;
+}
+
+.lore-panel::-webkit-scrollbar,
+.clan-card::-webkit-scrollbar,
+.mission-card::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+
+.lore-panel::-webkit-scrollbar-thumb,
+.clan-card::-webkit-scrollbar-thumb,
+.mission-card::-webkit-scrollbar-thumb {
+  background: rgba(217, 189, 114, .24);
+  border-radius: 999px;
+}
+
+/* On shorter screens, protect the current proportions rather than forcing larger cards. */
+@media (max-height: 760px) and (min-width: 761px) {
+  .tribe-heading {
+    padding-block: 5px 7px;
+    margin-bottom: 8px;
+  }
+  .clan-visual {
+    height: clamp(125px, 19vh, 165px);
+  }
+  .clan-card h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .tribe-heading {
+    width: calc(100% - 24px);
+    padding: 8px 12px 10px;
+  }
+  .tribe-layout .section-label {
+    text-align: left;
+    padding-left: 2px;
+  }
+  .clan-visual {
+    height: 125px;
+  }
+}
