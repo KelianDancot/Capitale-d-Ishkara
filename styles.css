@@ -129,9 +129,9 @@ body.immersed .jungle-video { opacity: 1; transform: scale(1); }
   background: rgba(10, 28, 18, .96);
   outline: none;
 }
-.pin-iiskraal { left: 10%; top: 11%; }
-.pin-roncepignon { right: 7%; top: 30%; }
-.pin-croafond { left: 36%; bottom: 8%; }
+.pin-iiskraal { right: 30%; bottom: 25%; }
+.pin-roncepignon { left: 5%; bottom: 35%; }
+.pin-croafond { left: 30%; top: 30%; }
 .portrait-stack { display: flex; min-width: 68px; }
 .portrait-stack i {
   width: 42px; height: 42px; border-radius: 50%;
@@ -161,9 +161,9 @@ body.immersed .jungle-video { opacity: 1; transform: scale(1); }
   transition: .2s ease;
 }
 .lore-pin:hover { transform: scale(1.15); border-color: var(--gold); color: var(--gold); }
-.pin-casino { left: 54%; top: 18%; }
-.pin-brume { right: 15%; bottom: 10%; }
-.pin-rivieres { left: 23%; bottom: 27%; }
+.pin-casino { left: 43%; top: 58%; }
+.pin-brume { right: 10%; top: 43%; }
+.pin-rivieres { left: 55%; bottom: 10%; }
 .map-hint { text-align: center; color: rgba(230,240,225,.65); font-size: .86rem; }
 
 .ghost-button, .primary-button, .danger-button, .text-button, .lock-button {
