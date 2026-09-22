@@ -1,92 +1,33 @@
-.class-icon-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(74px, 1fr));
-  gap: 10px;
-  margin: 10px 0 14px;
+.build-grid li strong {
+  color: #f1d58b;
 }
 
-.class-icon-chip {
-  min-width: 0;
-  padding: 9px 7px 8px;
-  display: grid;
-  justify-items: center;
-  gap: 6px;
-  border: 1px solid rgba(217, 189, 114, .14);
-  border-radius: 12px;
-  background: rgba(255,255,255,.025);
-  color: #e7dcc0;
-  text-align: center;
-  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+.build-grid li a {
+  color: #e1c375;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(225, 195, 117, .35);
+  transition: color .2s ease, border-color .2s ease;
 }
 
-.class-icon-chip:hover {
-  transform: translateY(-2px);
-  border-color: rgba(217, 189, 114, .42);
-  background: rgba(217, 189, 114, .055);
+.build-grid li a:hover,
+.build-grid li a:focus-visible {
+  color: #ffe3a0;
+  border-bottom-color: currentColor;
+  outline: none;
 }
 
-.class-icon-chip img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-  filter: drop-shadow(0 5px 8px rgba(0,0,0,.3));
-}
-
-.class-icon-chip span {
-  max-width: 100%;
-  font-size: .72rem;
-  line-height: 1.15;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.bullywug-guide {
+.build-grid li:has(a[href*="dandwiki.com"]) {
   margin-top: 10px;
   padding: 12px 13px;
   border: 1px solid rgba(217, 189, 114, .20);
   border-left: 3px solid var(--gold);
   border-radius: 10px;
-  background: linear-gradient(135deg, rgba(217,189,114,.075), rgba(255,255,255,.018));
+  background: linear-gradient(135deg, rgba(217, 189, 114, .075), rgba(255,255,255,.018));
   list-style: none;
   color: #e7eadf;
 }
 
-.bullywug-guide::before {
+.build-grid li:has(a[href*="dandwiki.com"])::before {
   content: '🐸';
   margin-right: 7px;
-}
-
-.bullywug-guide strong {
-  color: #f1d58b;
-}
-
-.bullywug-guide .bullywug-traits {
-  display: block;
-  margin-top: 7px;
-  color: #cbd5c8;
-  font-size: .9em;
-  line-height: 1.45;
-}
-
-.bullywug-guide a {
-  display: inline-block;
-  margin-top: 7px;
-  color: #e1c375;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(225,195,117,.35);
-}
-
-.bullywug-guide a:hover {
-  color: #ffe3a0;
-  border-bottom-color: currentColor;
-}
-
-@media (max-width: 760px) {
-  .class-icon-strip {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .class-icon-chip img {
-    width: 32px;
-    height: 32px;
-  }
 }
