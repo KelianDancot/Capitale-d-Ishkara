@@ -1,0 +1,57 @@
+/* Points d’intérêt supplémentaires d’Ishkara */
+
+.poi-pin {
+  z-index: 5;
+}
+
+/* Positions volontairement provisoires : le MJ peut les déplacer librement. */
+.pin-graveyard { left: 63%; top: 68%; }
+.pin-sobek { left: 22%; top: 24%; }
+.pin-couatl { left: 49%; top: 43%; }
+.pin-jungle-village { left: 74%; top: 22%; }
+
+.poi-media {
+  position: relative;
+  width: 100%;
+  margin: 0 0 18px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(217, 189, 114, .16);
+  background: rgba(3, 10, 7, .72);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .28);
+}
+
+.poi-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 280px;
+  object-fit: cover;
+  background: rgba(0, 0, 0, .45);
+}
+
+.poi-media::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(3, 10, 7, .38));
+}
+
+.poi-media.video-missing {
+  min-height: 120px;
+  background:
+    linear-gradient(135deg, rgba(217, 189, 114, .06), rgba(4, 15, 10, .7)),
+    url('Ishkara.png') center / cover;
+}
+
+.poi-media.video-missing .poi-video {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .poi-video {
+    max-height: 210px;
+  }
+}
