@@ -30,11 +30,11 @@
       <p class="welcome-lead">Cette carte contient uniquement ce que ton personnage peut connaître avant le début du one-shot.</p>
       <div class="tutorial-grid">
         <div><span>01</span><b>Explore</b><p>Survole puis clique sur les marqueurs pour découvrir les lieux et les peuples d’Ishkara.</p></div>
-        <div><span>02</span><b>Choisis ton peuple</b><p>Ouvre le marqueur de ta tribu et utilise le mot de passage que le MJ t’a donné.</p></div>
-        <div><span>03</span><b>Prête allégeance</b><p>Découvre les deux voix de ton peuple. Ton choix de chef sera enregistré et deviendra définitif.</p></div>
-        <div><span>04</span><b>Crée ton champion</b><p>Une fois ton choix fait, ton dossier personnel te donnera la directive et les conseils nécessaires pour créer ton personnage.</p></div>
+        <div><span>02</span><b>Choisis ton peuple</b><p>Ouvre le marqueur de ta tribu et utilise le mot de passage. Après validation, les autres tribus seront verrouillées.</p></div>
+        <div><span>03</span><b>Prête allégeance</b><p>Découvre les deux voix de ton peuple. Le choix du chef est définitif et scelle l’autre voie.</p></div>
+        <div><span>04</span><b>Crée ton champion</b><p>Ton dossier personnel te donnera ensuite la directive et les conseils nécessaires pour créer ton personnage.</p></div>
       </div>
-      <p class="welcome-note">Le bouton <strong>Synopsis</strong> reste disponible en haut à droite si tu veux relire l’introduction générale.</p>
+      <p class="welcome-note">Tu pourras toujours revenir à la carte et relire les informations déjà accessibles. Le bouton <strong>Synopsis</strong> reste disponible en haut à droite.</p>
       <button class="primary-button welcome-enter" type="button" onclick="document.getElementById('welcome-tutorial').classList.add('dismissed')">Découvrir Ishkara</button>
     </div>
   </div>
@@ -66,7 +66,7 @@
         </button>
 
         <button class="tribe-pin pin-roncepignon" data-tribe="roncepignon" type="button">
-          <span class="portrait-stack" aria-hidden="true"><i>DR</i><i>AD</i></span>
+          <span class="portrait-stack" aria-hidden="true"><i>DR</i><i>MO</i></span>
           <span class="pin-copy"><b>Roncepignon</b><small>Spores · entraide · défense</small></span>
           <span class="pin-point"></span>
         </button>
@@ -187,5 +187,6 @@
 
   <audio id="unlock-sound" preload="auto"></audio>
   <script src="app.js" defer></script>
+  <script src="lock-flow.js" defer></script>
 </body>
 </html>
