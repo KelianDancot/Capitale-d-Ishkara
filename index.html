@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="refine.css">
   <link rel="stylesheet" href="visual-assets.css">
   <link rel="stylesheet" href="tribe-polish.css">
+  <link rel="stylesheet" href="audio-control.css">
 </head>
 <body>
   <div class="ambient" aria-hidden="true"></div>
@@ -48,6 +49,10 @@
     </div>
     <div class="top-actions">
       <button class="ghost-button" id="lore-button" type="button">Synopsis</button>
+      <button class="audio-toggle" id="audio-toggle" type="button" aria-label="Couper la musique" aria-pressed="false" title="Couper la musique">
+        <svg data-icon="sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6.8 8.5H3v7h3.8L11 19V5Z"></path><path d="M15 9.2c1.1 1.5 1.1 4.1 0 5.6"></path><path d="M18 6.8c2.5 2.8 2.5 7.6 0 10.4"></path></svg>
+        <svg data-icon="muted" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M11 5 6.8 8.5H3v7h3.8L11 19V5Z"></path><path d="m16 9 5 6"></path><path d="m21 9-5 6"></path></svg>
+      </button>
       <button class="lock-button" id="reset-button" type="button" aria-label="Accès du maître du jeu">✦</button>
     </div>
   </header>
@@ -188,8 +193,12 @@
   </div>
 
   <audio id="unlock-sound" preload="auto"></audio>
+  <audio id="ambient-music" loop preload="metadata">
+    <source src="https://opengameart.org/sites/default/files/Theme%20of%20Agrual.mp3" type="audio/mpeg">
+  </audio>
   <script src="app.js" defer></script>
   <script src="lock-flow.js" defer></script>
   <script src="visual-assets.js" defer></script>
+  <script src="audio-control.js" defer></script>
 </body>
 </html>
