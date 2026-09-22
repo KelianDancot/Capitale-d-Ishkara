@@ -17,19 +17,6 @@ Le dossier final contient uniquement :
 
 Le site ne dévoile pas le temple, le Cœur d’Ishkara ni les objectifs exacts de l’épreuve future.
 
-## Codes actuels
-
-> À conserver côté MJ. Les chaînes ne sont pas présentes en clair dans `app.js` : seul leur hash SHA-256 y est stocké. Cela limite les découvertes accidentelles, mais ne remplace pas une authentification serveur.
-
-| Accès | Mot de passage |
-|---|---|
-| Iiskraal | `sobek-garde` |
-| Roncepignon | `spore-lucide` |
-| Croafond | `maree-basse` |
-| Réinitialisation MJ | `racine-premiere` |
-
-Les codes sont normalisés en minuscules, sans accents, et les espaces extérieurs sont ignorés.
-
 ## Déploiement GitHub Pages
 
 Le projet n’a aucun build : `index.html`, `styles.css` et `app.js` sont directement publiables.
