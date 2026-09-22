@@ -188,6 +188,12 @@ Approche recommandée :
 
 # Roncepignon
 
+Roncepignon est partagé entre deux conceptions très différentes de sa survie.
+
+Le **Grand Druide** incarne les gnomes et halfelins vivant au rythme des spores, du mycélium et de la coopération. Sous le village, les **Veilleurs des Profondeurs**, principalement composés de gnomes des profondeurs, entretiennent les galeries de repli, les pièges, les alarmes et les défenses contre les prédateurs et intrusions de la jungle.
+
+Ces derniers sont dirigés par **Morkehl Ombresilex**, un chef froid et méthodique qui considère que la survie de Roncepignon doit primer sur les traditions d’Ishkara.
+
 ## Missions secrètes
 
 ### Mission du Druide — Harmonie absolue
@@ -217,30 +223,42 @@ Approche recommandée :
 
 ---
 
-### Mission des Artisans Défensifs — Pragmatique et froide
+### Mission de Morkehl Ombresilex — Sécurité par l’élimination
 
-Cette faction pense que seule une alliance stratégique peut sauver Ishkara.
+Morkehl dirige les **Veilleurs des Profondeurs**, une communauté de gnomes des profondeurs chargée de défendre Roncepignon. Ils construisent les pièges, passages de repli, systèmes d’alarme et moyens destinés à repousser les menaces de la jungle.
+
+Morkehl estime cependant que la véritable menace n’est plus seulement extérieure. À ses yeux, Iiskraal et Croafond représentent deux peuples trop instables, trop difficiles à contrôler et trop éloignés d’un ordre durable pour être placés sur un pied d’égalité avec Roncepignon.
+
+Il pense qu’une disparition des autres champions au cours de l’expédition pourrait transformer Roncepignon en seul interlocuteur crédible aux yeux de Sylaëth. Il espère ensuite convaincre les elfes qu’une pacification militaire des deux autres tribus est préférable à une longue crise politique.
+
+Cette interprétation appartient à Morkehl : rien ne garantit que Sylaëth accepterait réellement ce plan.
 
 Objectifs principaux :
 
-- former une alliance avec Iiskraal ;
-- neutraliser Croafond si nécessaire.
+- préserver le champion de Roncepignon et assurer son retour ;
+- profiter d’un moment d’isolement, d’enfermement ou de crise pour éliminer les autres champions ou les abandonner dans une situation dont ils ne devraient pas revenir ;
+- faire en sorte que leur disparition puisse être attribuée au temple, à la jungle ou à leurs propres décisions.
 
 Objectifs secondaires :
 
-- récupérer un échantillon de la brume ;
-- tester les défenses du temple.
+- récupérer des informations sur les défenses, méthodes et faiblesses des autres villages ;
+- présenter Roncepignon comme la seule communauté encore capable de négocier avec les puissances extérieures ;
+- préparer un rapprochement avec Sylaëth en faveur d’une administration plus centralisée de la jungle.
 
 Contraintes :
 
-- éviter les pertes inutiles ;
-- agir efficacement.
+- ne pas déclencher un affrontement ouvert trop tôt ;
+- conserver un déni plausible ;
+- éviter tout acte qui identifierait immédiatement Roncepignon comme responsable ;
+- privilégier pièges, verrouillage de passages, sabotage et abandon plutôt qu’un meurtre spectaculaire.
 
 Approche recommandée :
 
-- coopération ciblée ;
-- utilisation de toxines non létales ;
-- contrôle du terrain.
+- gagner la confiance des autres représentants ;
+- observer les itinéraires, portes, mécanismes et issues ;
+- attendre un moment où la séparation paraît naturelle ;
+- transformer l’environnement en arme ;
+- revenir comme survivant crédible plutôt que comme vainqueur déclaré.
 
 ---
 
