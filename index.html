@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="refine.css">
 </head>
 <body>
   <div class="ambient" aria-hidden="true"></div>
@@ -22,13 +23,29 @@
   </video>
   <div class="world-shade" aria-hidden="true"></div>
 
+  <div id="welcome-tutorial" class="welcome-tutorial" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+    <div class="welcome-card">
+      <p class="eyebrow">Elyden · Ishkara</p>
+      <h1 id="welcome-title">Entre dans la jungle</h1>
+      <p class="welcome-lead">Cette carte contient uniquement ce que ton personnage peut connaître avant le début du one-shot.</p>
+      <div class="tutorial-grid">
+        <div><span>01</span><b>Explore</b><p>Survole puis clique sur les marqueurs pour découvrir les lieux et les peuples d’Ishkara.</p></div>
+        <div><span>02</span><b>Choisis ton peuple</b><p>Ouvre le marqueur de ta tribu et utilise le mot de passage que le MJ t’a donné.</p></div>
+        <div><span>03</span><b>Prête allégeance</b><p>Découvre les deux voix de ton peuple. Ton choix de chef sera enregistré et deviendra définitif.</p></div>
+        <div><span>04</span><b>Crée ton champion</b><p>Une fois ton choix fait, ton dossier personnel te donnera la directive et les conseils nécessaires pour créer ton personnage.</p></div>
+      </div>
+      <p class="welcome-note">Le bouton <strong>Synopsis</strong> reste disponible en haut à droite si tu veux relire l’introduction générale.</p>
+      <button class="primary-button welcome-enter" type="button" onclick="document.getElementById('welcome-tutorial').classList.add('dismissed')">Découvrir Ishkara</button>
+    </div>
+  </div>
+
   <header class="topbar">
     <div>
       <p class="eyebrow">Elyden · Ishkara</p>
       <h1>Les Héritiers d’Ishkara</h1>
     </div>
     <div class="top-actions">
-      <button class="ghost-button" id="lore-button" type="button">Chroniques connues</button>
+      <button class="ghost-button" id="lore-button" type="button">Synopsis</button>
       <button class="lock-button" id="reset-button" type="button" aria-label="Accès du maître du jeu">✦</button>
     </div>
   </header>
