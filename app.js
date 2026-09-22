@@ -90,16 +90,16 @@ const tribes = {
   },
   roncepignon: {
     name: 'Roncepignon',
-    subtitle: 'Une communauté où l’harmonie, les spores et les défenses patientes valent parfois mieux qu’une armée.',
-    public: `<p>Roncepignon privilégie les solutions qui évitent les pertes inutiles. Ses habitants savent que survivre dans la jungle demande autant de coopération que de prudence.</p><p>Deux tendances s’y distinguent : le <strong>Druide</strong>, partisan d’une harmonie presque absolue, et les <strong>Artisans Défensifs</strong>, plus froids et pragmatiques lorsqu’il faut choisir un allié ou contenir une menace.</p>`,
-    lore: `<p>Ton peuple sait observer les cycles, les réactions du vivant et les changements subtils dans l’environnement. Les spores sont un outil, une protection et parfois une langue que les étrangers comprennent mal.</p><p>À Roncepignon, la question n’est pas de savoir s’il faut éviter une guerre. La vraie question est : jusqu’où peut-on aller pour l’éviter sans devenir soi-même vulnérable ?</p>`,
+    subtitle: 'Une communauté où l’harmonie des spores côtoie les galeries, pièges et défenses des gnomes des profondeurs.',
+    public: `<p>Roncepignon privilégie les solutions qui évitent les pertes inutiles. Ses habitants savent que survivre dans la jungle demande autant de coopération que de prudence.</p><p>Deux forces structurent sa défense : le <strong>Grand Druide</strong>, partisan d’une harmonie presque absolue, et les <strong>Veilleurs des Profondeurs</strong>, des gnomes des profondeurs dirigés par <strong>Morkehl Ombresilex</strong>, chargés des pièges, galeries de repli et systèmes destinés à repousser les menaces de la jungle.</p>`,
+    lore: `<p>Tu as grandi dans une communauté où le mycélium, les spores et l’entraide façonnent la vie quotidienne. Mais sous les racines du village s’étend aussi un réseau de galeries entretenu par les gnomes des profondeurs.</p><p>Les Veilleurs des Profondeurs connaissent chaque passage, chaque issue et chaque piège défensif de Roncepignon. Là où le Druide cherche à préserver les liens, Morkehl considère que la survie dépend d’abord de la préparation et de la capacité à sacrifier une position avant de perdre le village entier.</p>`,
     clans: {
       druid: {
-        label: 'La voie du Druide',
+        label: 'La voie du Grand Druide',
         title: 'Harmonie absolue',
         values: 'Médiation · vivant · retenue',
         summary: 'Tu cherches à maintenir le groupe entier debout. Les conflits sont des symptômes à comprendre avant de devenir des blessures irréparables.',
-        leader: 'Le Druide',
+        leader: 'Le Grand Druide',
         role: 'Voix spirituelle de Roncepignon',
         sigil: 'DR',
         quote: 'Une branche seule casse. Une forêt plie, se parle et repousse.',
@@ -120,28 +120,28 @@ const tribes = {
         ]
       },
       artisans: {
-        label: 'La voie des Artisans Défensifs',
-        title: 'Pragmatisme défensif',
-        values: 'Contrôle · toxines · alliances utiles',
-        summary: 'Tu crois à la coopération, mais pas à l’aveuglement. Une alliance vaut par ce qu’elle protège et une menace doit parfois être neutralisée avant de pouvoir négocier.',
-        leader: 'Les Artisans Défensifs',
-        role: 'Cercle de spécialistes et de protecteurs',
-        sigil: 'AD',
-        quote: 'La meilleure défense n’est pas un mur. C’est la certitude que l’ennemi n’atteindra jamais la porte.',
-        directiveTitle: 'Protège sans gaspiller',
-        directive: 'Évalue les autres représentants avec sang-froid. Recherche les alliances utiles, évite les pertes inutiles et sois prêt à neutraliser proprement une menace si elle devient impossible à contenir autrement.',
-        privateInfo: 'Les Artisans se méfient particulièrement des forces incontrôlables et des démonstrations religieuses qui pourraient dégénérer. Ils préfèrent l’incapacitation, les toxines non létales et le contrôle du terrain à la brutalité.',
+        label: 'La voie des Veilleurs des Profondeurs',
+        title: 'Sécurité absolue',
+        values: 'Préparation · pièges · contrôle',
+        summary: 'Tu appartiens aux gnomes des profondeurs qui protègent Roncepignon depuis ses galeries. Pour toi, une défense efficace doit anticiper l’ennemi, contrôler ses déplacements et toujours conserver une issue de repli.',
+        leader: 'Morkehl Ombresilex',
+        role: 'Chef des Veilleurs des Profondeurs',
+        sigil: 'MO',
+        quote: 'On ne survit pas parce qu’on espère le meilleur. On survit parce qu’on a préparé le pire.',
+        directiveTitle: 'Fais de Roncepignon le seul survivant crédible',
+        directive: 'Gagne la confiance des autres champions et observe comment ils réagissent sous pression. Si une situation d’isolement, d’enfermement ou de crise se présente, fais en sorte que Roncepignon soit le seul à pouvoir encore revenir et parler au nom d’Ishkara.',
+        privateInfo: 'Morkehl accepte que les autres champions meurent ou soient laissés pour morts si cela peut passer pour une conséquence naturelle de l’expédition. Il veut ensuite présenter Roncepignon comme le seul interlocuteur fiable et chercher un accord avec Sylaëth pour imposer une pacification des deux autres tribus. Rien ne garantit cependant que Sylaëth partage réellement cette vision.',
         rules: [
           'Niveau 7.',
-          'Race recommandée : Gnome ou Halfelin lié à Roncepignon.',
-          'Ton personnage doit savoir fabriquer, analyser, piéger, soigner ou contrôler son environnement.',
-          'Prévois au moins une méthode non létale pour mettre fin à un affrontement.'
+          'Race fortement recommandée : Gnome des profondeurs / Svirfnébelin.',
+          'Ton personnage doit être lié aux défenses de Roncepignon : sapeur, éclaireur, poseur de pièges, sentinelle ou spécialiste des galeries.',
+          'Ton concept doit être capable de coopérer sincèrement assez longtemps pour ne pas révéler trop tôt ses intentions.'
         ],
         recos: [
-          'Classes : Artificier, Roublard, Druide, Rôdeur, Magicien.',
-          'Historiques : Artisan de guilde, Sage, Criminel, Soldat, Ermite.',
-          'Compétences utiles : Nature, Investigation, Escamotage, Médecine, Perception.',
-          'Poisons, pièges, entraves et contrôle de zone correspondent très bien à cette voie.'
+          'Classes : Roublard, Rôdeur, Artificier, Guerrier tactique ou Magicien de contrôle.',
+          'Historiques : Soldat, Criminel, Artisan de guilde, Éclaireur ou ingénieur défensif.',
+          'Compétences utiles : Investigation, Perception, Discrétion, Survie, Escamotage.',
+          'Pièges, outils de voleur, leurres, contrôle de terrain et mobilité sont particulièrement adaptés.'
         ]
       }
     }
