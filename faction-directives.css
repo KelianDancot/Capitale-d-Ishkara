@@ -1,0 +1,88 @@
+.tribe-doctrine {
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(215, 185, 112, .22);
+  border-radius: 14px;
+  background: rgba(6, 20, 13, .48);
+}
+
+.tribe-doctrine b {
+  display: block;
+  margin-bottom: 6px;
+  font-family: 'Cinzel', serif;
+  color: #e0c98b;
+}
+
+.tribe-doctrine p {
+  margin: 0;
+}
+
+.faction-extras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 18px;
+}
+
+.faction-extra {
+  padding: 14px 16px;
+  border: 1px solid rgba(214, 188, 121, .16);
+  border-radius: 14px;
+  background: rgba(5, 18, 12, .46);
+  backdrop-filter: blur(7px);
+}
+
+.faction-extra h3 {
+  margin: 5px 0 7px;
+  font-size: 1rem;
+}
+
+.faction-extra p {
+  margin: 5px 0 0;
+  line-height: 1.48;
+}
+
+.faction-success {
+  border-color: rgba(190, 207, 137, .22);
+}
+
+.faction-reward {
+  border-color: rgba(221, 187, 102, .28);
+}
+
+.faction-rumors {
+  grid-column: 1 / -1;
+}
+
+.faction-rumors ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  columns: 2;
+  column-gap: 28px;
+}
+
+.faction-rumors li {
+  break-inside: avoid;
+  margin: 0 0 9px;
+  line-height: 1.45;
+}
+
+.rumor-warning {
+  font-size: .82rem;
+  opacity: .72;
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .faction-extras {
+    grid-template-columns: 1fr;
+  }
+
+  .faction-rumors {
+    grid-column: auto;
+  }
+
+  .faction-rumors ul {
+    columns: 1;
+  }
+}
