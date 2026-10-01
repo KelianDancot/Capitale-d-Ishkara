@@ -9,7 +9,7 @@
   }
 
   setRules('iiskraal', 'strategist', [
-    'Niveau 7.',
+    'Niveau 8.',
     '<strong>Race prédéfinie : Homme-lézard / Lizardfolk.</strong> Ton champion est un membre d’Iiskraal ; la race n’est pas laissée au choix.',
     'Ton personnage doit être assez compétent pour être présenté comme champion ou spécialiste d’Iiskraal.',
     'Prévois une raison personnelle de croire à l’ordre, à la préparation ou à la supériorité d’une stratégie bien construite.'
@@ -21,7 +21,7 @@
   ]);
 
   setRules('iiskraal', 'champion', [
-    'Niveau 7.',
+    'Niveau 8.',
     '<strong>Race prédéfinie : Homme-lézard / Lizardfolk.</strong> Ton champion est un membre d’Iiskraal ; la race n’est pas laissée au choix.',
     'Ton personnage doit pouvoir être reconnu comme protecteur, combattant ou représentant de valeur.',
     'Définis une limite morale claire que ton personnage ne franchira pas.'
@@ -33,7 +33,7 @@
   ]);
 
   setRules('roncepignon', 'druid', [
-    'Niveau 7.',
+    'Niveau 8.',
     '<strong>Race prédéfinie : Halfelin ou Gnome, n’importe quelle sous-race.</strong>',
     'Quelle que soit ta sous-race, ton apparence doit montrer ton appartenance à la voie du Grand Druide : spores, champignons, fibres végétales, talismans naturels, vêtements organiques ou autres éléments visuels liés au vivant de Roncepignon.',
     'Ta personnalité et ta directive doivent rester dans les clous de cette voie : préserver les liens, éviter l’escalade et privilégier les solutions qui permettent aux autres de rester capables de dialoguer.',
@@ -46,7 +46,7 @@
   ]);
 
   setRules('roncepignon', 'artisans', [
-    'Niveau 7.',
+    'Niveau 8.',
     '<strong>Race prédéfinie : Halfelin ou Gnome, n’importe quelle sous-race.</strong>',
     'Quelle que soit ta sous-race, ton apparence doit rappeler les Veilleurs des Profondeurs : équipement utilitaire, outils de sapeur, accessoires de pièges, vêtements sombres ou renforcés, marques des galeries, protections adaptées au travail souterrain.',
     'Ta personnalité et ta directive doivent rester dans les clous du choix de Morkehl : préparation, contrôle, prudence, capacité à paraître coopératif et priorité absolue donnée à la survie de Roncepignon.',
@@ -59,7 +59,7 @@
   ]);
 
   setRules('croafond', 'sleeper', [
-    'Niveau 7.',
+    'Niveau 8.',
     '<strong>Race prédéfinie : Bullywug / Brutacien de Croafond.</strong> La race n’est pas laissée au choix.',
     bullywugAideDD,
     'Ton personnage doit être à l’aise dans les marais et capable de protéger, d’observer ou d’agir avec patience.',
@@ -72,7 +72,7 @@
   ]);
 
   setRules('croafond', 'priest', [
-    'Niveau 7.',
+    'Niveau 8.',
     '<strong>Race prédéfinie : Bullywug / Brutacien de Croafond.</strong> La race n’est pas laissée au choix.',
     bullywugAideDD,
     'Ton personnage doit avoir une relation forte à Glog-Mor, qu’elle soit sincère, intéressée ou obsessionnelle.',
