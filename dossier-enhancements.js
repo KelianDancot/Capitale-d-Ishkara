@@ -47,7 +47,7 @@
 
   setRules('roncepignon', 'artisans', [
     'Niveau 8.',
-    '<strong>Race prédéfinie : Halfelin ou Gnome, n’importe quelle sous-race.</strong>',
+    '<strong>Race prédéfinie : Gnome des profondeurs / Svirfnébelin.</strong>',
     'Quelle que soit ta sous-race, ton apparence doit rappeler les Veilleurs des Profondeurs : équipement utilitaire, outils de sapeur, accessoires de pièges, vêtements sombres ou renforcés, marques des galeries, protections adaptées au travail souterrain.',
     'Ta personnalité et ta directive doivent rester dans les clous du choix de Morkehl : préparation, contrôle, prudence, capacité à paraître coopératif et priorité absolue donnée à la survie de Roncepignon.',
     'Ton personnage doit avoir un lien crédible avec les défenses du village : sentinelle, éclaireur, sapeur, poseur de pièges, spécialiste des galeries ou rôle équivalent.'
