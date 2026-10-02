@@ -154,13 +154,34 @@ body.immersed .jungle-video { opacity: 1; transform: scale(1); }
 .lore-pin {
   position: absolute;
   width: 44px; height: 44px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.26);
-  background: rgba(3,12,8,.75);
-  box-shadow: 0 0 0 6px rgba(255,255,255,.05);
+  border: 1px solid rgba(224,201,139,.42);
+  background: rgba(3,12,8,.78);
+  box-shadow: 0 0 0 6px rgba(235,224,190,.045), 0 0 18px rgba(209,177,96,.08);
+  color: #efe4bf;
   cursor: pointer;
-  transition: .2s ease;
+  transition: transform .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
 }
-.lore-pin:hover { transform: scale(1.15); border-color: var(--gold); color: var(--gold); }
+.lore-pin > span {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+.lore-pin svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.lore-pin:hover {
+  transform: scale(1.15);
+  border-color: #d7b970;
+  color: #d7b970;
+  box-shadow: 0 0 0 6px rgba(215,185,112,.07), 0 0 22px rgba(215,185,112,.22);
+}
 .pin-casino { left: 43%; top: 58%; }
 .pin-brume { right: 10%; top: 43%; }
 .pin-rivieres { left: 55%; bottom: 10%; }
