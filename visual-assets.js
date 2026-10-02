@@ -83,7 +83,7 @@
         openInfo({
           kicker: 'Mémoire tribale',
           title: `Histoire de ${tribe.name}`,
-          body: tribe.lore,
+          body: tribe.history || tribe.lore,
         });
       });
     }
