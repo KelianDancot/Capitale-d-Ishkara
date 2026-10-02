@@ -20,13 +20,6 @@
           rewardTitle: 'Jeton du plan parfait',
           reward: 'Une fois par repos long, après avoir effectué un test de Tromperie, Persuasion, Perspicacité ou Investigation, tu peux ajouter 1d6 au résultat après avoir vu le dé, mais avant de connaître la conséquence finale.',
           success: 'Réussite totale : ton champion est reconnu comme vainqueur ou dirigeant. Réussite partielle : Iiskraal obtient l’autorité dominante même si une façade d’alliance est conservée.',
-          rumors: [
-            '<b>Khezram / Sobek :</b> il respecterait parfois davantage un ennemi courageux qu’un allié faible. Une qualité admirable, jusqu’au jour où son jugement contredit ton plan.',
-            '<b>Grand Druide :</b> il chercherait à faire naître une cité commune plutôt qu’une capitale issue d’un village. S’il réussit, personne ne gagnera vraiment — surtout pas toi.',
-            '<b>Morkehl :</b> les Veilleurs possèdent des cartes, des issues et des plans de repli qu’ils ne montrent même pas à tous les leurs.',
-            '<b>Crapaud Dormant :</b> Croafond chercherait surtout un protecteur. Un bon allié, à condition qu’il comprenne qui protège qui.',
-            '<b>Glog-Mor :</b> certains fidèles parlent des autres peuples comme de futures offrandes. Ce n’est peut-être qu’une façon de faire peur. Peut-être.'
-          ]
         },
         champion: {
           label: 'La voie de Khezram, Croc de Sobek',
@@ -43,13 +36,6 @@
           rewardTitle: 'Écaille du Croc',
           reward: 'Une fois par repos long, par action bonus, désigne une créature visible pendant 1 minute. La première fois à chacun de tes tours que tu la touches avec une attaque, elle subit 1d4 dégâts supplémentaires du même type que l’attaque. L’effet prend fin si tu es inconscient.',
           success: 'Réussite totale : Iiskraal gagne et les champions jugés dignes reconnaissent ta légitimité. Si un rival honorable survit et accepte ton autorité, Khezram considère cela comme une victoire plus grande qu’un massacre.',
-          rumors: [
-            '<b>Sskarek :</b> le Petit Chef accumulerait des dossiers sur tout le monde, y compris sur les Crocs de Sobek. Pour lui, un rival se neutralise avant le combat.',
-            '<b>Grand Druide :</b> sa paix semble sincère, mais vouloir sauver tout le monde peut devenir une excuse pour ne jamais condamner personne.',
-            '<b>Morkehl :</b> les Veilleurs considèrent l’abandon d’un allié comme acceptable si cela sauve leur position. À toi de voir si c’est de la prudence ou de la lâcheté.',
-            '<b>Crapaud Dormant :</b> il respecterait réellement les pactes qui assurent la survie des siens. Un accord clair avec Croafond pourrait avoir du poids.',
-            '<b>Glog-Mor :</b> les histoires de sacrifices ne sont pas toutes des inventions. Si son champion franchit cette limite devant toi, Sobek attendra une réponse.'
-          ]
         }
       }
     },
@@ -73,13 +59,6 @@
           rewardTitle: 'Spores de concorde',
           reward: 'Une fois par repos long, lorsqu’une créature alliée à 9 m rate un test de caractéristique ou un jet de sauvegarde, tu peux utiliser ta réaction pour lui accorder 1d6 à ajouter au résultat. Elle doit pouvoir te voir, t’entendre ou respirer les spores que tu libères.',
           success: 'Réussite totale : au moins deux autres champions acceptent publiquement le principe d’une cité commune ou d’une gouvernance partagée. Plus personne ne peut raisonnablement présenter un village seul comme l’unique avenir d’Ishkara.',
-          rumors: [
-            '<b>Sskarek :</b> le Petit Chef ne veut pas seulement une capitale ; il veut que son champion soit la réponse évidente à la question « qui commande ? ».',
-            '<b>Khezram :</b> Sobek respecte le mérite. Si tu gagnes son respect, un accord peut devenir plus solide que n’importe quel traité écrit.',
-            '<b>Morkehl :</b> certains Veilleurs disent qu’un village assez bien préparé n’a besoin d’aucun allié. Orren craint que cette idée aille bien plus loin qu’ils ne l’avouent.',
-            '<b>Crapaud Dormant :</b> il cherche lui aussi une alliance durable. Croafond pourrait être ton interlocuteur naturel.',
-            '<b>Glog-Mor :</b> le culte promet de rendre Croafond impossible à ignorer. Les moyens évoqués dans certaines prières sont moins rassurants.'
-          ]
         },
         artisans: {
           label: 'La voie de Morkehl Ombresilex',
@@ -96,13 +75,6 @@
           rewardTitle: 'Charge de repli des Veilleurs',
           reward: 'Une fois par repos long, par action bonus, tu peux effectuer à la fois les actions Se désengager et Foncer pour ce tour. De plus, tu as avantage au premier test d’Investigation ou d’outils de voleur effectué pour comprendre un piège ou un mécanisme durant chaque repos long.',
           success: 'Réussite totale : tu rentres à Roncepignon avec le Cœur et aucun autre champion n’est en position de le réclamer. Réussite partielle : le Cœur n’est pas à toi, mais Roncepignon échappe à toute tutelle extérieure et reste politiquement indépendant.',
-          rumors: [
-            '<b>Sskarek :</b> il veut que son champion soit couronné par la logique avant même que les autres comprennent qu’il y avait une compétition.',
-            '<b>Khezram :</b> il confronte les problèmes de face. Évite de lui donner une raison claire de te juger avant que tu sois prêt à partir.',
-            '<b>Orren :</b> le Druide est persuadé qu’une cité commune peut protéger Roncepignon. Morkehl pense qu’il confond espoir et garantie.',
-            '<b>Crapaud Dormant :</b> Croafond cherche des alliances pour survivre ; cette dépendance peut le rendre prévisible.',
-            '<b>Glog-Mor :</b> ses fidèles rêvent de domination et de sacrifices. Un fanatique est dangereux, mais ses intentions sont souvent plus faciles à lire que celles d’un diplomate.'
-          ]
         }
       }
     },
@@ -126,13 +98,6 @@
           rewardTitle: 'Pacte du marais',
           reward: 'Après avoir conclu en jeu un pacte explicite avec une créature consentante, choisissez l’un de vous comme lié jusqu’au prochain repos long. Une fois pendant cette durée, quand l’un des deux rate un jet de sauvegarde alors qu’il se trouve à 9 m de l’autre, il peut ajouter 1d6 au résultat.',
           success: 'Réussite totale : au moins un champion accepte un accord concret garantissant la place de Croafond après l’épreuve. Réussite exceptionnelle : les deux autres champions ont chacun une raison personnelle ou politique de défendre Croafond.',
-          rumors: [
-            '<b>Sskarek :</b> Iiskraal veut gagner. Si tu lui offres une alliance qui rend sa victoire plus facile, il pourrait accepter — mais lis bien ce que tu lui donnes.',
-            '<b>Khezram :</b> un pacte honorablement gagné avec le Croc de Sobek pourrait valoir davantage qu’une promesse d’émissaire.',
-            '<b>Orren :</b> le Grand Druide veut une cité commune. C’est peut-être la proposition la plus proche de ce que cherche Croafond.',
-            '<b>Morkehl :</b> les Veilleurs se préparent toujours une sortie que les autres ignorent. Ne base jamais toute ta survie sur leur parole seule.',
-            '<b>Glog-Mor :</b> même à Croafond, certains pensent que Zha’Gorr confond survie et domination. Ne sous-estime pas jusqu’où il peut aller.'
-          ]
         },
         priest: {
           label: 'La voie de Zha’Gorr, Prêtre de Glog-Mor',
@@ -149,16 +114,48 @@
           rewardTitle: 'Sceau du sacrifice',
           reward: 'Une fois par repos long, lorsqu’une créature que tu peux voir à 9 m tombe à 0 PV, tu peux invoquer Glog-Mor sans action : tu gagnes un nombre de PV temporaires égal à ton niveau + ton bonus de maîtrise et tu as avantage à ton prochain test d’Intimidation avant la fin de ton prochain tour.',
           success: 'Réussite totale : au moins un corps de champion est rapporté à Croafond et le village possède assez de force ou de terreur pour revendiquer la gouvernance. Réussite absolue selon Zha’Gorr : les autres peuples se soumettent et deviennent une source durable de sacrifices.',
-          rumors: [
-            '<b>Sskarek :</b> le Petit Chef veut un trône sans forcément l’appeler ainsi. Un futur rival évident.',
-            '<b>Khezram :</b> le Croc de Sobek pourrait être un sacrifice glorieux, mais il ne mourra ni facilement ni sans venir te chercher si tes intentions sont révélées.',
-            '<b>Orren :</b> le Grand Druide rêve que tous les peuples puissent partager le pouvoir. Zha’Gorr appelle cela partager sa faiblesse.',
-            '<b>Morkehl :</b> les Veilleurs veulent quelque chose qu’ils peuvent enfermer sous terre et garder loin des étrangers. Le Cœur les intéressera certainement.',
-            '<b>Bôrr-Gahm :</b> le Crapaud Dormant préférera toujours négocier une survie modeste plutôt que risquer la grandeur. Le culte considère sa prudence comme une chaîne.'
-          ]
         }
       }
     }
+  };
+
+  const tribeRumors = {
+    iiskraal: [
+      {
+        tribe: 'Roncepignon',
+        title: 'Le village que la jungle a gardé',
+        text: 'On raconte que Roncepignon a déjà payé cher des décisions venues d’Elireï. Ses habitants se montrent accueillants, mais ils n’accordent pas facilement leur confiance aux puissances extérieures. Leurs spores, pièges et chemins cachés rendent leur territoire beaucoup plus difficile à approcher qu’il n’en a l’air.'
+      },
+      {
+        tribe: 'Croafond',
+        title: 'Le marais sous-estimé',
+        text: 'Croafond possède moins d’infrastructures visibles que ses voisins, mais ses habitants connaissent les marais mieux que quiconque. On les dit capables de survivre dans des zones où des troupes mieux équipées disparaîtraient en quelques heures.'
+      }
+    ],
+    roncepignon: [
+      {
+        tribe: 'Iiskraal',
+        title: 'Un village qui regarde déjà plus loin',
+        text: 'Iiskraal s’est rapidement renforcé grâce à l’union de plusieurs groupes d’hommes-lézards. Beaucoup pensent que le village ne se contentera pas longtemps de défendre ses frontières et qu’il cherchera naturellement à peser davantage sur le reste d’Ishkara.'
+      },
+      {
+        tribe: 'Croafond',
+        title: 'Ceux qui n’ont besoin de presque rien',
+        text: 'Les habitants de Croafond paraissent moins développés matériellement, mais ils vivent depuis longtemps dans un environnement que peu d’étrangers supportent. Leur faiblesse apparente cache une réelle capacité d’adaptation et une culture difficile à intimider.'
+      }
+    ],
+    croafond: [
+      {
+        tribe: 'Iiskraal',
+        title: 'La force qui grandit',
+        text: 'Iiskraal devient chaque année plus organisé et plus puissant. Ses guerriers crocodiliens impressionnent, mais ses habitants plus discrets sont réputés pour leurs plans, leur magie et leurs pièges. Peu de gens croient qu’un tel village acceptera éternellement de rester un acteur secondaire.'
+      },
+      {
+        tribe: 'Roncepignon',
+        title: 'Une communauté qui se souvient',
+        text: 'Roncepignon n’a pas oublié les circonstances qui l’ont poussé jusqu’à Ishkara. Les habitants peuvent sembler chaleureux et coopératifs, mais leur méfiance envers les décisions imposées de l’extérieur est connue jusque dans les marais.'
+      }
+    ]
   };
 
   Object.entries(data).forEach(([tribeKey, patch]) => {
@@ -196,9 +193,17 @@
         <p>${clan.reward || ''}</p>
       </section>
       <section class="faction-extra faction-rumors">
-        <span class="panel-label">Rumeurs transmises par ton camp</span>
-        <p class="rumor-warning">Tu ignores lesquelles sont exactes, exagérées ou volontairement orientées.</p>
-        <ul>${(clan.rumors || []).map(rumor => `<li>${rumor}</li>`).join('')}</ul>
+        <span class="panel-label">Rumeurs sur les autres peuples</span>
+        <p class="rumor-warning">Ce sont des réputations, observations et récits qui circulent dans ton peuple. Elles ne révèlent pas les ordres secrets ni les intentions personnelles des autres chefs.</p>
+        <div class="rumor-grid">
+          ${(tribeRumors[tribeKey] || []).map(rumor => `
+            <article class="rumor-card">
+              <span class="rumor-tribe">${rumor.tribe}</span>
+              <h3>${rumor.title}</h3>
+              <p>${rumor.text}</p>
+            </article>
+          `).join('')}
+        </div>
       </section>
     `;
   }
