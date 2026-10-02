@@ -17,8 +17,6 @@
           directiveTitle: 'Rends ta victoire inévitable',
           directive: 'À la fin de l’épreuve, tu dois être reconnu comme le champion qui mérite de diriger le nouvel Ishkara. Fais comprendre amicalement, par la ruse, la tromperie ou l’influence qu’Iiskraal est le choix logique. Si un autre champion tente de prendre l’ascendant politique, devance-le et écarte sa candidature par le moyen que tu juges le plus efficace.',
           privateInfo: 'Sskarek ne te demande pas d’être cruel pour le plaisir. Il te demande de gagner. Une alliance est utile tant qu’elle rapproche Iiskraal du pouvoir ; une réputation peut être détruite plus proprement qu’un corps. Mais si une méthode plus dure devient nécessaire pour empêcher un rival d’être choisi, il n’y verra pas un échec moral : seulement un coût.',
-          rewardTitle: 'Jeton du plan parfait',
-          reward: 'Une fois par repos long, après avoir effectué un test de Tromperie, Persuasion, Perspicacité ou Investigation, tu peux ajouter 1d6 au résultat après avoir vu le dé, mais avant de connaître la conséquence finale.',
           success: 'Réussite totale : ton champion est reconnu comme vainqueur ou dirigeant. Réussite partielle : Iiskraal obtient l’autorité dominante même si une façade d’alliance est conservée.',
         },
         champion: {
@@ -33,8 +31,6 @@
           directiveTitle: 'Gagne, puis juge les dignes',
           directive: 'Ton objectif reste la victoire d’Iiskraal. Pendant l’épreuve, juge les autres champions sur leurs actes. Ceux qui montrent courage, loyauté et respect peuvent devenir des alliés véritables. Celui qui trahit, humilie les faibles ou agit sans honneur doit être confronté. S’il refuse de répondre de ses actes et prouve qu’il est indigne de confiance, élimine la menace avant qu’elle ne puisse gouverner Ishkara.',
           privateInfo: 'Khezram ne t’interdit pas les alliances : il les considère même plus fortes lorsqu’elles sont forgées entre adversaires dignes. En revanche, il refuse qu’un champion méprisable puisse ressortir de l’épreuve auréolé de prestige. Le jugement doit venir des actes, pas des rumeurs.',
-          rewardTitle: 'Écaille du Croc',
-          reward: 'Une fois par repos long, par action bonus, désigne une créature visible pendant 1 minute. La première fois à chacun de tes tours que tu la touches avec une attaque, elle subit 1d4 dégâts supplémentaires du même type que l’attaque. L’effet prend fin si tu es inconscient.',
           success: 'Réussite totale : Iiskraal gagne et les champions jugés dignes reconnaissent ta légitimité. Si un rival honorable survit et accepte ton autorité, Khezram considère cela comme une victoire plus grande qu’un massacre.',
         }
       }
@@ -56,8 +52,6 @@
           directiveTitle: 'Fonde une cité commune',
           directive: 'Maintiens autant que possible les trois champions unis et fais naître l’idée d’une cité nouvelle appartenant aux trois peuples plutôt qu’à un vainqueur unique. Par le dialogue, les compromis, les dettes de vie ou les alliances, rassemble suffisamment de volontés pour que l’issue crédible de l’épreuve soit une Ishkara gouvernée ensemble.',
           privateInfo: 'Orren pense que la mission est volontairement assez dure pour révéler une incapacité à coopérer et justifier ensuite une présence extérieure renforcée. Il ne possède pas la preuve d’un complot, mais l’histoire de Roncepignon lui interdit de considérer cette possibilité comme naïve. Son objectif réel est de rendre toute occupation politiquement injustifiable en présentant une union locale viable.',
-          rewardTitle: 'Spores de concorde',
-          reward: 'Une fois par repos long, lorsqu’une créature alliée à 9 m rate un test de caractéristique ou un jet de sauvegarde, tu peux utiliser ta réaction pour lui accorder 1d6 à ajouter au résultat. Elle doit pouvoir te voir, t’entendre ou respirer les spores que tu libères.',
           success: 'Réussite totale : au moins deux autres champions acceptent publiquement le principe d’une cité commune ou d’une gouvernance partagée. Plus personne ne peut raisonnablement présenter un village seul comme l’unique avenir d’Ishkara.',
         },
         artisans: {
@@ -72,8 +66,6 @@
           directiveTitle: 'Reviens seul avec le Cœur',
           directive: 'Joue le bon samaritain et rends-toi indispensable au groupe. Lorsque l’occasion est crédible, subtilise le Cœur et quitte l’expédition. Fais en sorte que les autres champions soient morts, incapables de te poursuivre ou durablement exclus du jeu politique. Roncepignon doit conserver le Cœur et devenir une ville indépendante protégée de la brume sans rien devoir aux puissances extérieures.',
           privateInfo: 'Morkehl ne cherche pas une capitale reconnue par Sylaëth : il veut une indépendance que personne ne puisse lui retirer. Il préfère exploiter les dangers du temple, une séparation ou une trahison déjà amorcée plutôt qu’un assassinat grossier. Si tu peux revenir seul sans preuve directe contre toi, le récit de l’expédition deviendra une arme aussi importante que le Cœur.',
-          rewardTitle: 'Charge de repli des Veilleurs',
-          reward: 'Une fois par repos long, par action bonus, tu peux effectuer à la fois les actions Se désengager et Foncer pour ce tour. De plus, tu as avantage au premier test d’Investigation ou d’outils de voleur effectué pour comprendre un piège ou un mécanisme durant chaque repos long.',
           success: 'Réussite totale : tu rentres à Roncepignon avec le Cœur et aucun autre champion n’est en position de le réclamer. Réussite partielle : le Cœur n’est pas à toi, mais Roncepignon échappe à toute tutelle extérieure et reste politiquement indépendant.',
         }
       }
@@ -95,8 +87,6 @@
           directiveTitle: 'Obtiens une alliance qui survivra à l’épreuve',
           directive: 'Avant la fin de l’expédition, lie Croafond à un ou deux autres champions par un accord réel : protection mutuelle, gouvernement partagé, dette de vie, pacte politique ou projet commun. Tu n’as pas besoin d’être déclaré seul vainqueur si l’accord obtenu garantit que Croafond ne pourra ni être annexé, ni abandonné, ni sacrifié lorsque la nouvelle Ishkara sera créée.',
           privateInfo: 'Bôrr-Gahm estime qu’une victoire solitaire de Croafond est improbable et qu’une défaite sans allié pourrait être fatale au village. Il t’autorise à céder du prestige, des ressources ou même une part de pouvoir si la contrepartie protège réellement la pérennité des Croatiens.',
-          rewardTitle: 'Pacte du marais',
-          reward: 'Après avoir conclu en jeu un pacte explicite avec une créature consentante, choisissez l’un de vous comme lié jusqu’au prochain repos long. Une fois pendant cette durée, quand l’un des deux rate un jet de sauvegarde alors qu’il se trouve à 9 m de l’autre, il peut ajouter 1d6 au résultat.',
           success: 'Réussite totale : au moins un champion accepte un accord concret garantissant la place de Croafond après l’épreuve. Réussite exceptionnelle : les deux autres champions ont chacun une raison personnelle ou politique de défendre Croafond.',
         },
         priest: {
@@ -111,8 +101,6 @@
           directiveTitle: 'Rapporte un sacrifice et impose Croafond',
           directive: 'Fais en sorte qu’un ou deux champions rivaux meurent durant l’expédition et rapporte au moins un de leurs corps à Croafond pour le rite de Glog-Mor. Le sacrifice doit permettre au culte d’appeler des monstruosités batraciennes au service du village. Ton objectif politique est ensuite d’imposer la gouvernance de Croafond par l’intimidation et la force, jusqu’à réduire les tribus qui refusent de se soumettre en populations serviles et en futures offrandes.',
           privateInfo: 'Zha’Gorr préfère une mort pouvant être attribuée au temple, à une créature ou à une trahison mutuelle plutôt qu’un meurtre maladroit commis devant témoins. Le corps compte : le sacrifice doit pouvoir être ramené. Si tu ne peux obtenir un cadavre, une victoire politique par la terreur reste utile, mais elle ne satisfait pas pleinement Glog-Mor.',
-          rewardTitle: 'Sceau du sacrifice',
-          reward: 'Une fois par repos long, lorsqu’une créature que tu peux voir à 9 m tombe à 0 PV, tu peux invoquer Glog-Mor sans action : tu gagnes un nombre de PV temporaires égal à ton niveau + ton bonus de maîtrise et tu as avantage à ton prochain test d’Intimidation avant la fin de ton prochain tour.',
           success: 'Réussite totale : au moins un corps de champion est rapporté à Croafond et le village possède assez de force ou de terreur pour revendiquer la gouvernance. Réussite absolue selon Zha’Gorr : les autres peuples se soumettent et deviennent une source durable de sacrifices.',
         }
       }
@@ -188,9 +176,9 @@
         <p>${clan.success || ''}</p>
       </section>
       <section class="faction-extra faction-reward">
-        <span class="panel-label">Avantage de voie</span>
-        <h3>${clan.rewardTitle || 'Avantage'}</h3>
-        <p>${clan.reward || ''}</p>
+        <span class="panel-label">Avantage personnalisé</span>
+        <h3>Un don pensé pour ton champion</h3>
+        <p>Une fois ton personnage créé et validé avec le MJ, tu recevras un avantage supplémentaire conçu spécialement pour lui. Ce bonus sera choisi en fonction de ton concept, de ta classe, de ta manière de jouer et de la voie que tu as juré de suivre, afin qu’il complète réellement ton personnage plutôt que d’imposer un pouvoir identique à tous les champions.</p>
       </section>
       <section class="faction-extra faction-rumors">
         <span class="panel-label">Rumeurs sur les autres peuples</span>
