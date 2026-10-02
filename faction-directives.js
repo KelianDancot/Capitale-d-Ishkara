@@ -178,7 +178,7 @@
       <section class="faction-extra faction-reward">
         <span class="panel-label">Avantage personnalisé</span>
         <h3>Un don pensé pour ton champion</h3>
-        <p>Une fois ton personnage créé et validé avec le MJ, tu recevras un avantage supplémentaire conçu spécialement pour lui. Ce bonus sera choisi en fonction de ton concept, de ta classe, de ta manière de jouer et de la voie que tu as juré de suivre, afin qu’il complète réellement ton personnage plutôt que d’imposer un pouvoir identique à tous les champions.</p>
+        <p>Après création et validation de ton personnage, le MJ t’accordera un avantage personnalisé selon ton concept, ta classe et ta façon de jouer.</p>
       </section>
       <section class="faction-extra faction-rumors">
         <span class="panel-label">Rumeurs sur les autres peuples</span>
