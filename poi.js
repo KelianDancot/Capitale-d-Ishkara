@@ -5,7 +5,7 @@
     graveyard: {
       kicker: 'Lieu redouté',
       title: 'Le Cimetière noyé',
-      icon: '☩',
+      icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21h10M9 21V10a3 3 0 0 1 6 0v11M6 10h12M12 3v4M9 5h6"/></svg>',
       className: 'pin-graveyard',
       video: 'img/video/fondsquelette.webm',
       copy: `
@@ -16,7 +16,7 @@
     sobekTemple: {
       kicker: 'Ancien sanctuaire',
       title: 'Le Temple de Sobek',
-      icon: '𓆊',
+      icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 19V9l6-5 6 5v10M9 19v-6h6v6"/><path d="M8 9h8"/></svg>',
       className: 'pin-sobek',
       video: 'img/video/fondtemple.webm',
       copy: `
@@ -27,7 +27,7 @@
     couatlTemple: {
       kicker: 'Ruine sacrée',
       title: 'Le Temple Couatl',
-      icon: '✧',
+      icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14c3-5 6-7 9-6 2 .7 3 2 5 1-1 4-4 7-8 7-2 0-4-.6-6-2Z"/><path d="M9 13c2-1 4-1 6 0M12 8V4M10 5h4"/></svg>',
       className: 'pin-couatl',
       video: 'img/video/fondgrandtemple.webm',
       copy: `
@@ -38,7 +38,7 @@
     jungleVillage: {
       kicker: 'Repère isolé',
       title: 'Le Village de la jungle',
-      icon: '⌂',
+      icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7M6 10v10h12V10M9 20v-6h6v6"/></svg>',
       className: 'pin-jungle-village',
       video: 'img/video/village.webm',
       copy: `
