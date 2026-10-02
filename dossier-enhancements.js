@@ -34,7 +34,7 @@
 
   setRules('roncepignon', 'druid', [
     'Niveau 8.',
-    '<strong>Race prédéfinie : Halfelin ou Gnome, n’importe quelle sous-race.</strong>',
+    '<strong>Race prédéfinie : Humain, Halfelin ou Gnome, n’importe quelle sous-race.</strong>',
     'Quelle que soit ta sous-race, ton apparence doit montrer ton appartenance à la voie du Grand Druide : spores, champignons, fibres végétales, talismans naturels, vêtements organiques ou autres éléments visuels liés au vivant de Roncepignon.',
     'Ta personnalité et ta directive doivent rester dans les clous de cette voie : préserver les liens, éviter l’escalade et privilégier les solutions qui permettent aux autres de rester capables de dialoguer.',
     'Ton personnage doit avoir une raison crédible d’être choisi comme médiateur, guide ou protecteur.'
